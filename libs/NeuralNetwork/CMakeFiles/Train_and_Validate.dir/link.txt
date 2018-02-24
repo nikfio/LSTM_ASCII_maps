@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTrain_and_Validate.a  CMakeFiles/Train_and_Validate.dir/Train_and_Validate.cpp.o
+/usr/bin/ranlib libTrain_and_Validate.a

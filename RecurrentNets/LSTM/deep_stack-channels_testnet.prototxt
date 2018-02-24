@@ -1,0 +1,167 @@
+name: "LSTM_stack-drop-channels-1-8-1-8"
+
+
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  data_param {
+    source: "/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/Datasets/Validate_inputs-10_10240-300-2-3-20-0-55-lmdb"
+    batch_size: 2048
+    backend: LMDB
+  }
+ 
+}
+
+layer {
+	name: "Input"
+	type: "Input"
+	top:  "clip"
+	input_param {
+		shape {
+			dim: 2048
+			dim: 10 		
+		}
+	
+	}
+	
+}
+
+
+layer {
+  name: "data_slicer"
+  type: "Slice"
+  bottom: "data"
+  top: "ranges"
+  top: "dist_angle"
+  slice_param {
+    axis: 1
+    slice_point: 8
+  }
+}
+
+layer {
+  name: "clip_slicer"
+  type: "Slice"
+  bottom: "clip"
+  top: "clip_r"
+  top: "clip_d"
+  slice_param {
+    axis: 1
+    slice_point: 8
+  }
+}
+
+
+layer {
+  name: "lstm1_r"
+  type: "LSTM"
+  bottom: "ranges"
+  bottom: "clip_r"
+  top: "lstm1_r"
+  recurrent_param {
+    num_output: 8
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+
+layer {
+  name: "lstm1_d"
+  type: "LSTM"
+  bottom: "dist_angle"
+  bottom: "clip_d"
+  top: "lstm1_d"
+  recurrent_param {
+    num_output: 8
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+  name: "concat-channels"
+  bottom: "lstm1_r"
+  bottom: "lstm1_d"
+  top: "lstm-concat"
+  type: "Concat"
+  concat_param {
+    axis: 1
+  }
+}
+
+
+layer {
+  name: "lstm-join"
+  type: "LSTM"
+  bottom: "lstm-concat"
+  bottom: "clip"
+  top: "lstm-join"
+  recurrent_param {
+    num_output: 16
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "lstm-join"
+  top: "out"
+
+  inner_product_param {
+    num_output: 8
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+  name: "softmax"
+  type: "Softmax"
+  bottom: "out"
+  top: "softmax"
+}
+
+
+layer {
+  name: "argmax"
+  type: "ArgMax"
+  bottom: "softmax"
+  top: "argmax"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "softmax"
+  bottom: "label"
+  top: "accuracy"  
+}
+
+
+

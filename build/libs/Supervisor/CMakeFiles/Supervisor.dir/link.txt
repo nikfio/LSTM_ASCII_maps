@@ -1,0 +1,2 @@
+/usr/bin/ar cr libSupervisor.a  CMakeFiles/Supervisor.dir/Supervisor.cpp.o
+/usr/bin/ranlib libSupervisor.a

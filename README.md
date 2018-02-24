@@ -59,4 +59,3 @@ Usage:
 Please, if you want, signal if nasty errors like segmentation fault occur.
 
 
-# LSTM_ASCII_maps

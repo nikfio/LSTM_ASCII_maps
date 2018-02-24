@@ -1,0 +1,86 @@
+name: "RNN"
+
+layer {
+	name: "Input"
+	type: "Input"
+	top:  "data"
+	top:  "clip"
+	top:  "label"
+	input_param {
+		shape {
+			dim: 1000
+			dim: 10 
+			dim: 1 
+		}
+		shape {
+			dim: 1000
+			dim: 10  		
+		}
+		shape {
+			dim: 1000
+			dim: 1  		
+		}
+	
+	}
+	
+}
+
+
+layer {
+  name: "rnn1"
+  type: "RNN"
+  bottom: "data"
+  bottom: "clip"
+  top: "rnn1"
+  recurrent_param {
+    num_output: 300
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "rnn1"
+  top: "out"
+
+  inner_product_param {
+    num_output: 8
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "softmax"
+  type: "Softmax"
+  bottom: "out"
+  top: "softmax"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "softmax"
+  bottom: "label"
+  top: "accuracy"
+}
+
+layer {
+  name: "softmaxLoss"
+  type: "SoftmaxWithLoss"
+  bottom: "out"
+  bottom: "label"
+  top: "loss"
+}

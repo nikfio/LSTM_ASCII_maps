@@ -1,0 +1,9 @@
+Log file created at: 2018/02/21 18:14:08
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0221 18:14:08.991607 26729 TestNeuralNetwork.cpp:121]  steps tail size: 1
+I0221 18:14:10.765547 26729 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0221 18:14:10.765574 26729 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0221 18:14:11.112180 26729 TrainVal_db.cpp:78] GPU mode
+I0221 18:14:11.112201 26729 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_mlp_solver.prototxt
+F0221 18:14:12.648988 26729 db_lmdb.hpp:15] Check failed: mdb_status == 0 (2 vs. 0) No such file or directory

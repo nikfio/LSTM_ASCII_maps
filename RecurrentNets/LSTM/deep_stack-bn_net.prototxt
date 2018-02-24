@@ -1,0 +1,128 @@
+name: "LSTM_stack-bn-2-64"
+
+
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  data_param {
+    source: "/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/Datasets/Train_inputs-10_102400-300-5-2-20-0-55-lmdb"
+    batch_size: 2048
+    backend: LMDB
+  }
+ 
+}
+
+layer {
+	name: "Input"
+	type: "Input"
+	top:  "clip"
+	input_param {
+		shape {
+			dim: 2048
+			dim: 10  		
+		}
+	
+	}
+	
+}
+
+
+layer {
+  name: "lstm1"
+  type: "LSTM"
+  bottom: "data"
+  bottom: "clip"
+  top: "lstm1"
+  recurrent_param {
+    num_output: 64
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+  name: "bn1"
+  type: "BatchNorm"
+  bottom: "lstm1"
+  top: "bn1"
+  batch_norm_param {
+    use_global_stats: false
+  }
+
+}
+
+
+layer {
+  name: "lstm2"
+  type: "LSTM"
+  bottom: "bn1"
+  bottom: "clip"
+  top: "lstm2"
+  recurrent_param {
+    num_output: 64
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "lstm2"
+  top: "out"
+
+  inner_product_param {
+    num_output: 8
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "softmax"
+  type: "Softmax"
+  bottom: "out"
+  top: "softmax"
+}
+
+
+layer {
+  name: "argmax"
+  type: "ArgMax"
+  bottom: "softmax"
+  top: "argmax"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "softmax"
+  bottom: "label"
+  top: "accuracy"  
+}
+
+layer {
+  name: "softmaxLoss"
+  type: "SoftmaxWithLoss"
+  bottom: "out"
+  bottom: "label"
+  top: "loss"  
+}
+
+

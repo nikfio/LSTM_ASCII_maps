@@ -1,0 +1,16 @@
+  net: "../RecurrentNets/LSTM/deep_mlp_net.prototxt"
+  test_net: "../RecurrentNets/LSTM/deep_mlp_testnet.prototxt"
+  iter_size: 1
+  test_iter: 0
+  test_interval: 100000000
+  base_lr: 0.001
+  lr_policy: "fixed"
+#  weight_decay : 0.00001
+#  regularization_type: "L1"
+  momentum: 0.95
+  display: 100
+  max_iter: 100000
+  snapshot: 5000
+  snapshot_prefix: "../RecurrentNets/LSTM/deepLSTM_BIGtest-newweights/MLP_NW1_deep-stack-4-64-2048-11_MazesRandom"
+  solver_type: SGD
+  solver_mode: GPU

@@ -1,0 +1,1 @@
+/usr/bin/g++-5    -std=gnu++0x    CMakeFiles/TestAstar.dir/TestAstar.cpp.o  -o TestAstar -rdynamic ../libs/Supervisor/libScenario.a ../libs/Supervisor/libSupervisor.a -lboost_system -lboost_filesystem 

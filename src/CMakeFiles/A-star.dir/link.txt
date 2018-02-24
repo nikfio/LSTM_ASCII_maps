@@ -1,0 +1,1 @@
+/usr/bin/g++-5      CMakeFiles/A-star.dir/A-star.cpp.o  -o A-star -rdynamic ../libs/libScenario.a 

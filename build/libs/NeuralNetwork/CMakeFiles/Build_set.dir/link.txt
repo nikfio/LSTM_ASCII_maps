@@ -1,0 +1,2 @@
+/usr/bin/ar cr libBuild_set.a  CMakeFiles/Build_set.dir/Build_set.cpp.o
+/usr/bin/ranlib libBuild_set.a

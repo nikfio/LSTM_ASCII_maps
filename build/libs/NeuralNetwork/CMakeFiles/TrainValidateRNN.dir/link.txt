@@ -1,0 +1,2 @@
+/usr/bin/ar cr libTrainValidateRNN.a  CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o
+/usr/bin/ranlib libTrainValidateRNN.a

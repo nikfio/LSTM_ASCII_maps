@@ -1,0 +1,2 @@
+/usr/bin/ar cr libScenario.a  CMakeFiles/Scenario.dir/Scenario.cpp.o
+/usr/bin/ranlib libScenario.a

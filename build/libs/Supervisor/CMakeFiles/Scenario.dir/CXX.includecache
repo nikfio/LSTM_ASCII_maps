@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+cstdlib
+-
+cstdio
+-
+sstream
+-
+iomanip
+-
+cstring
+-
+sys/time.h
+-
+ctype.h
+-
+boost/filesystem.hpp
+-
+Scenario.hpp
+/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+
+/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+string
+-
+vector
+-
+functional
+-
+set
+-
+

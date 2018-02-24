@@ -1,0 +1,138 @@
+name: "Deep Feed-Forward Neural Network"
+
+layer {
+	name: "Input"
+	type: "Input"
+	top: "data"
+	top: "label"
+	input_param {
+		shape {
+			dim: 50 # batch_size
+			dim: 11 # sequence_length
+		}
+		shape {
+			dim: 50 # batch_size
+			dim: 1		
+		}
+	
+	}
+}
+
+
+layer {
+	name: "ip1"
+	type: "InnerProduct"
+	inner_product_param {
+		num_output : 300
+		weight_filler {
+	          type: "gaussian"
+	          std: 0.1
+	        }
+		bias_filler {
+			type: "constant"
+		}
+	}
+	bottom: "data"
+	top: "ip1"
+}
+
+
+layer {
+	name: "ReLU0"
+	type: "ReLU"
+	bottom: "ip1"
+	top: "ip1"
+}
+
+layer {
+  name: "fc-out1"
+  type: "InnerProduct"
+  bottom: "ip1"
+  top: "fc-out1"
+
+  inner_product_param {
+    num_output: 100
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "relu-out1"
+  type: "ReLU"
+  bottom: "fc-out1"
+  top: "fc-out1"
+}
+
+layer {
+  name: "fc-out2"
+  type: "InnerProduct"
+  bottom: "fc-out1"
+  top: "fc-out2"
+
+  inner_product_param {
+    num_output: 100
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "relu-out2"
+  type: "ReLU"
+  bottom: "fc-out2"
+  top: "fc-out2"
+}
+
+layer {
+	name: "out"
+	type: "InnerProduct"
+	inner_product_param {
+		num_output : 8
+		weight_filler {
+      		      type: "gaussian"
+		      std: 0.1
+		}
+		bias_filler {
+			type: "constant"
+		}
+	}
+	bottom: "fc-out2"
+	top: "out"
+}
+
+
+
+layer {
+  name: "softmax"
+  type: "Softmax"
+  bottom: "out"
+  top: "softmax"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "softmax"
+  bottom: "label"
+  top: "accuracy"
+}
+
+layer {
+	name: "softmaxLoss"
+	type: "SoftmaxWithLoss"
+	bottom: "out"
+	bottom: "label"
+	top:    "loss"
+}
+

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikfio/Documents/ThesisCode/NN-Roomba/libs/Scenario.cpp
+iostream
+-
+fstream
+-
+string
+-
+vector
+-
+cstdlib
+-
+cstdio
+-
+sstream
+-
+iomanip
+-
+cstring
+-
+boost/filesystem.hpp
+-
+Scenario.hpp
+/home/nikfio/Documents/ThesisCode/NN-Roomba/libs/Scenario.hpp
+
+/home/nikfio/Documents/ThesisCode/NN-Roomba/libs/Scenario.hpp
+string
+-
+vector
+-
+functional
+-
+set
+-
+

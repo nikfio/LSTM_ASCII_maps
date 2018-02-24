@@ -1,0 +1,264 @@
+name: "LSTM_stack-bn-channels-7-64"
+
+layer {
+	name: "Input"
+	type: "Input"
+	top:  "data"
+	top:  "clip"
+	top:  "label"
+	input_param {
+		shape {
+			dim: 512	
+			dim: 11 
+			dim: 1 
+		}
+		shape {
+			dim: 512
+			dim: 11  		
+		}
+		shape {
+			dim: 512
+			dim: 1  		
+		}
+	
+	}
+	
+}
+
+layer {
+  name: "data_slicer"
+  type: "Slice"
+  bottom: "data"
+  top: "ranges"
+  top: "dist_angle"
+  slice_param {
+    axis: 1
+    slice_point: 8
+  }
+}
+
+layer {
+  name: "clip_slicer"
+  type: "Slice"
+  bottom: "clip"
+  top: "clip_r"
+  top: "clip_d"
+  slice_param {
+    axis: 1
+    slice_point: 8
+  }
+}
+
+
+layer {
+  name: "lstm1_r"
+  type: "LSTM"
+  bottom: "ranges"
+  bottom: "clip_r"
+  top: "lstm1_r"
+  recurrent_param {
+    num_output: 32
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+
+layer {
+	name: "BN_r"
+	type: "BatchNorm"
+	bottom: "lstm1_r"
+	top: "lstm1_r"
+	batch_norm_param {
+   	 use_global_stats: false
+     }
+
+} 
+
+
+
+layer {
+  name: "lstm1_d"
+  type: "LSTM"
+  bottom: "dist_angle"
+  bottom: "clip_d"
+  top: "lstm1_d"
+  recurrent_param {
+    num_output: 32
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+
+layer {
+	name: "BN_d"
+	type: "BatchNorm"
+	bottom: "lstm1_d"
+	top: "lstm1_d"
+	batch_norm_param {
+   	 use_global_stats: false
+     }
+
+} 
+
+
+
+layer {
+  name: "lstm2_r"
+  type: "LSTM"
+  bottom: "lstm1_r"
+  bottom: "clip_r"
+  top: "lstm2_r"
+  recurrent_param {
+    num_output: 32
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+
+layer {
+	name: "BN_r"
+	type: "BatchNorm"
+	bottom: "lstm2_r"
+	top: "lstm2_r"
+	batch_norm_param {
+   	 use_global_stats: false
+     }
+
+} 
+
+
+
+layer {
+  name: "lstm2_d"
+  type: "LSTM"
+  bottom: "lstm1_d"
+  bottom: "clip_d"
+  top: "lstm2_d"
+  recurrent_param {
+    num_output: 32
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+	name: "BN_d"
+	type: "BatchNorm"
+	bottom: "lstm2_d"
+	top: "lstm2_d"
+	batch_norm_param {
+   	 use_global_stats: false
+     }
+} 
+
+
+layer {
+  name: "concat-channels"
+  bottom: "lstm2_r"
+  bottom: "lstm2_d"
+  top: "lstm-concat"
+  type: "Concat"
+  concat_param {
+    axis: 1
+  }
+}
+
+
+layer {
+  name: "lstm_join"
+  type: "LSTM"
+  bottom: "lstm-concat"
+  bottom: "clip"
+  top: "lstm_join"
+  recurrent_param {
+    num_output: 64
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+
+layer {
+	name: "BN_join"
+	type: "BatchNorm"
+	bottom: "lstm_join"
+	top: "lstm_join"
+	batch_norm_param {
+   	 use_global_stats: false
+     }
+
+} 
+
+
+
+
+layer {
+  name: "out"
+  type: "InnerProduct"
+  bottom: "lstm_join"
+  top: "out"
+
+  inner_product_param {
+    num_output: 8
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
+
+layer {
+  name: "softmax"
+  type: "Softmax"
+  bottom: "out"
+  top: "softmax"
+}
+
+
+layer {
+  name: "argmax"
+  type: "ArgMax"
+  bottom: "softmax"
+  top: "argmax"
+}
+
+layer {
+  name: "accuracy"
+  type: "Accuracy"
+  bottom: "softmax"
+  bottom: "label"
+  top: "accuracy"  
+}
+
+
+

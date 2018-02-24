@@ -1,0 +1,13 @@
+Log file created at: 2018/02/20 01:23:02
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0220 01:23:02.693722 30988 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0220 01:23:02.693909 30988 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0220 01:23:02.889142 30988 TrainVal_db.cpp:78] GPU mode
+I0220 01:23:02.889160 30988 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_mlp_solver.prototxt
+I0220 01:23:03.332077 30988 TrainVal_db.cpp:129] Net loaded: MLP-1-32
+I0220 01:23:03.332092 30988 TrainVal_db.cpp:130] TRAIN INFO: batch size: 2048
+I0220 01:23:03.332096 30988 TrainVal_db.cpp:131] Forward - backward per batch (gradients accumulated): 1
+I0220 01:23:03.332120 30988 TrainVal_db.cpp:132] Number of updates per batch: 1
+I0220 01:23:03.332125 30988 TrainVal_db.cpp:133] Unrolling for 10 timesteps
+F0220 01:23:03.332479 30988 net.cpp:686] Check failed: target_blobs[j]->shape() == source_blob->shape() Cannot share param 0 weights from layer 'fc1'; shape mismatch.  Source param shape is 32 10 (320); target param shape is 16 10 (160)

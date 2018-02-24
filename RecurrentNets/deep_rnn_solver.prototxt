@@ -1,0 +1,16 @@
+  net: "../RecurrentNets/deep_stackout_rnn_net.prototxt"
+  test_net: "../RecurrentNets/deep_stackout_rnn_testnet.prototxt"
+  iter_size: 1
+  test_iter: 0
+  test_interval: 100000000
+  base_lr: 0.01
+  lr_policy: "fixed"
+  weight_decay : 0.00001
+  regularization_type: "L1"
+  momentum: 0.95
+  display: 25
+  max_iter: 10000000
+  snapshot: 75
+  snapshot_prefix: "../RecurrentNets/RNN_stackIN"
+  solver_type: ADADELTA
+  solver_mode: GPU
