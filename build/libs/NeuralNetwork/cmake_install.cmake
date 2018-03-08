@@ -1,4 +1,4 @@
-# Install script for directory: /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork
+# Install script for directory: /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -88,7 +88,7 @@ vector
 Scenario.hpp
 ../libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/TestNeuralNetwork.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/TestNeuralNetwork.cpp
 cstdlib
 -
 string
@@ -114,15 +114,15 @@ caffe/net.hpp
 caffe/solver.hpp
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Supervisor.hpp
 Build_set.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Build_set.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Build_set.hpp
 Common_net.cpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Common_net.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Common_net.cpp
 TrainValidateRNN.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/TrainValidateRNN.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/TrainValidateRNN.hpp
 
 /usr/include/atlas/cblas.h
 

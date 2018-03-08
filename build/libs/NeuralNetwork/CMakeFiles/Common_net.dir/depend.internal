@@ -4,9 +4,9 @@
 libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.o
  ../libs/Supervisor/Scenario.hpp
  ../libs/Supervisor/Supervisor.hpp
- /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Build_set.hpp
- /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Common_net.cpp
- /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Common_net.hpp
+ /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
+ /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.cpp
+ /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
  /usr/include/atlas/cblas.h
  /usr/local/caffe/build/src/caffe/proto/caffe.pb.h
  /usr/local/caffe/include/caffe/blob.hpp

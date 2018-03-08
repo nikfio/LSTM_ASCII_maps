@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 string
 -
 vector
@@ -16,7 +16,7 @@ functional
 set
 -
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.cpp
 vector
 -
 iostream
@@ -34,15 +34,15 @@ unistd.h
 cstdlib
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.hpp
 iostream
 -
 vector
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 

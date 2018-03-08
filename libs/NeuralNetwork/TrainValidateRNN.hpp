@@ -38,7 +38,7 @@
 
 using namespace caffe;
 
-const int TIME_SEQUENCE = 10;
+const int TIME_SEQUENCE = 1000;
 
 const int MIN_STATE_SIZE = 10;
 

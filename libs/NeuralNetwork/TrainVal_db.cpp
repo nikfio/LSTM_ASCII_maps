@@ -152,6 +152,7 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 				    " weight_decay = %f \n"
                         " state_input_size = %d \n " 
 				    " max_path_length = %d \n "	
+				    " time_seq_length = %d \n "
 				    " loss_data = [ \n",
 				     net->name().c_str(), local->tm_mon+1, 
 				     local->tm_mday, local->tm_hour, local->tm_min,
@@ -160,7 +161,8 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 				     solver->param().base_lr(),
 				     solver->param().weight_decay(),
 					sequence_length,
-					FLAGS_max_length );
+					FLAGS_max_length,
+					TIME_SEQUENCE );
 	
 	if(print_check <= 0) {
 	   printf("File: writetofile() failed\n");
@@ -305,9 +307,7 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 //					for(int j = 0; j < sequence_length; j++) {
 //						printf(" %.4f  ",  test_blobData->mutable_cpu_data()[i * sequence_length + j]);
 //					}
-//					for(int j = 0; j < sequence_length; j++) {
-//						printf(" %.0f  ",  test_blobClip->mutable_cpu_data()[i * sequence_length + j]);
-//					}
+//					
 
 //					cout << endl;
 

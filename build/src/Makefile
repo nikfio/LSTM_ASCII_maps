@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv
+CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build
+CMAKE_BINARY_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/src/CMakeFiles/progress.marks
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles 0
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles /home/leonida/ThesisCode/LSTM_ASCII_maps/build/src/CMakeFiles/progress.marks
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/TestAstar.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestAstar.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestAstar.dir/rule
 .PHONY : src/CMakeFiles/TestAstar.dir/rule
 
 # Convenience name for target.
@@ -109,12 +109,12 @@ TestAstar: src/CMakeFiles/TestAstar.dir/rule
 
 # fast build rule for target.
 TestAstar/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/build
 .PHONY : TestAstar/fast
 
 # Convenience name for target.
 src/CMakeFiles/TestNeuralNetwork.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestNeuralNetwork.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestNeuralNetwork.dir/rule
 .PHONY : src/CMakeFiles/TestNeuralNetwork.dir/rule
 
 # Convenience name for target.
@@ -123,12 +123,12 @@ TestNeuralNetwork: src/CMakeFiles/TestNeuralNetwork.dir/rule
 
 # fast build rule for target.
 TestNeuralNetwork/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/build
 .PHONY : TestNeuralNetwork/fast
 
 # Convenience name for target.
 src/CMakeFiles/TestRRT.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestRRT.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TestRRT.dir/rule
 .PHONY : src/CMakeFiles/TestRRT.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ TestRRT: src/CMakeFiles/TestRRT.dir/rule
 
 # fast build rule for target.
 TestRRT/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/build
 .PHONY : TestRRT/fast
 
 TestAstar.o: TestAstar.cpp.o
@@ -145,7 +145,7 @@ TestAstar.o: TestAstar.cpp.o
 
 # target to build an object file
 TestAstar.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.o
 .PHONY : TestAstar.cpp.o
 
 TestAstar.i: TestAstar.cpp.i
@@ -153,7 +153,7 @@ TestAstar.i: TestAstar.cpp.i
 
 # target to preprocess a source file
 TestAstar.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.i
 .PHONY : TestAstar.cpp.i
 
 TestAstar.s: TestAstar.cpp.s
@@ -161,7 +161,7 @@ TestAstar.s: TestAstar.cpp.s
 
 # target to generate assembly for a file
 TestAstar.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestAstar.dir/build.make src/CMakeFiles/TestAstar.dir/TestAstar.cpp.s
 .PHONY : TestAstar.cpp.s
 
 TestNeuralNetwork.o: TestNeuralNetwork.cpp.o
@@ -169,7 +169,7 @@ TestNeuralNetwork.o: TestNeuralNetwork.cpp.o
 
 # target to build an object file
 TestNeuralNetwork.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.o
 .PHONY : TestNeuralNetwork.cpp.o
 
 TestNeuralNetwork.i: TestNeuralNetwork.cpp.i
@@ -177,7 +177,7 @@ TestNeuralNetwork.i: TestNeuralNetwork.cpp.i
 
 # target to preprocess a source file
 TestNeuralNetwork.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.i
 .PHONY : TestNeuralNetwork.cpp.i
 
 TestNeuralNetwork.s: TestNeuralNetwork.cpp.s
@@ -185,7 +185,7 @@ TestNeuralNetwork.s: TestNeuralNetwork.cpp.s
 
 # target to generate assembly for a file
 TestNeuralNetwork.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestNeuralNetwork.dir/build.make src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.s
 .PHONY : TestNeuralNetwork.cpp.s
 
 TestRRT.o: TestRRT.cpp.o
@@ -193,7 +193,7 @@ TestRRT.o: TestRRT.cpp.o
 
 # target to build an object file
 TestRRT.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.o
 .PHONY : TestRRT.cpp.o
 
 TestRRT.i: TestRRT.cpp.i
@@ -201,7 +201,7 @@ TestRRT.i: TestRRT.cpp.i
 
 # target to preprocess a source file
 TestRRT.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.i
 .PHONY : TestRRT.cpp.i
 
 TestRRT.s: TestRRT.cpp.s
@@ -209,7 +209,7 @@ TestRRT.s: TestRRT.cpp.s
 
 # target to generate assembly for a file
 TestRRT.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f src/CMakeFiles/TestRRT.dir/build.make src/CMakeFiles/TestRRT.dir/TestRRT.cpp.s
 .PHONY : TestRRT.cpp.s
 
 # Help Target
@@ -243,6 +243,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

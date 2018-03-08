@@ -1,4 +1,4 @@
-# Install script for directory: /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor
+# Install script for directory: /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

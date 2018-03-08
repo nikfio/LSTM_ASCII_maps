@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.cpp
 iostream
 -
 fstream
@@ -32,9 +32,9 @@ ctype.h
 boost/filesystem.hpp
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 string
 -
 vector

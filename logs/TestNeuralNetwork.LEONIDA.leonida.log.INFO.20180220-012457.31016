@@ -1,8 +1,0 @@
-Log file created at: 2018/02/20 01:24:57
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0220 01:24:57.706532 31016 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0220 01:24:57.706724 31016 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0220 01:24:57.910889 31016 TrainVal_db.cpp:78] GPU mode
-I0220 01:24:57.910905 31016 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_mlp_solver.prototxt
-F0220 01:24:57.919551 31016 solver.cpp:431] Cannot write to snapshot prefix '../RecurrentNets/LSTM/deepMLP-BIGtest-32cells/MLP_deep-stack-1-32-2048_MazesRandom'.  Make sure that the directory exists and is writeable.

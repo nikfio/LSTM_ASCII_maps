@@ -1,0 +1,8 @@
+Log file created at: 2018/03/06 10:52:18
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0306 10:52:18.346959 27398 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0306 10:52:18.347127 27398 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0306 10:52:18.538007 27398 TrainVal_db.cpp:78] GPU mode
+I0306 10:52:18.538023 27398 TrainVal_db.cpp:84] ../RecurrentNets/deep_rnn_solver.prototxt
+F0306 10:52:21.338054 27398 insert_splits.cpp:29] Unknown bottom blob 'rnn2' (layer 'out', bottom index 0)

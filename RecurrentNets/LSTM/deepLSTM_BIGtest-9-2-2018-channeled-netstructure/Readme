@@ -1,7 +1,0 @@
-Minor training testing showed improvements when combining prev step and channeled structure.
-This folder apply both modifications, channels are two:
-	1) ranges
-	2) dist + rel_angle + prev_step
-
-Batch Normalization is reg chosen here
-

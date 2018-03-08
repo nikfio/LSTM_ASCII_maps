@@ -36,7 +36,7 @@ vector
 Scenario.hpp
 ../libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/TestRRT.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/TestRRT.cpp
 cstdlib
 -
 string
@@ -52,9 +52,9 @@ boost/filesystem.hpp
 sstream
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Supervisor.hpp
 RRT.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/RRT.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/src/RRT.hpp
 

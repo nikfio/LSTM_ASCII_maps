@@ -1,5 +1,5 @@
-  net: "../RecurrentNets/deep_stackout_rnn_net.prototxt"
-  test_net: "../RecurrentNets/deep_stackout_rnn_testnet.prototxt"
+  net: "../RecurrentNets/deep_stack_rnn_net.prototxt"
+  test_net: "../RecurrentNets/deep_stack_rnn_testnet.prototxt"
   iter_size: 1
   test_iter: 0
   test_interval: 100000000
@@ -10,7 +10,7 @@
   momentum: 0.95
   display: 25
   max_iter: 10000000
-  snapshot: 75
-  snapshot_prefix: "../RecurrentNets/RNN_stackIN"
+  snapshot: 5000
+  snapshot_prefix: "../RecurrentNets/deepRNN_BIGtest_8cells/RNN_t5_stack_2-8_11"
   solver_type: ADADELTA
   solver_mode: GPU

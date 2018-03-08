@@ -1,0 +1,6 @@
+Log file created at: 2018/03/08 21:17:07
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0308 21:17:07.146040 24812 net.cpp:956] Unknown blob name argmax
+W0308 21:17:07.146127 24812 net.cpp:956] Unknown blob name argmax
+W0308 21:17:56.949209 24812 TrainVal_db.cpp:269] TRAIN EPOCH: 1  ACCURACY: 40.8213 %  MEAN LOSS: 1.6269

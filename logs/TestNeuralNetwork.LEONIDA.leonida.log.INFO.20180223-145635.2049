@@ -1,9 +1,0 @@
-Log file created at: 2018/02/23 14:56:35
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0223 14:56:35.081490  2049 TestNeuralNetwork.cpp:121]  steps tail size: 1
-I0223 14:56:36.433342  2049 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0223 14:56:36.433379  2049 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0223 14:56:36.633296  2049 TrainVal_db.cpp:78] GPU mode
-I0223 14:56:36.633309  2049 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
-F0223 14:56:39.709262  2049 insert_splits.cpp:29] Unknown bottom blob 'lstm2' (layer 'lstm2', bottom index 0)

@@ -1,29 +1,33 @@
-name: "RNN_stack"
+name: "RNN-stack-2-8"
+
+
+layer {
+  name: "data"
+  type: "Data"
+  top: "data"
+  top: "label"
+  data_param {
+    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/Train_inputs-11_102400-300-5-2-20-20-34-lmdb"
+    batch_size: 512
+    backend: LMDB
+  }
+ 
+}
 
 layer {
 	name: "Input"
 	type: "Input"
-	top:  "data"
 	top:  "clip"
-	top:  "label"
 	input_param {
 		shape {
-			dim: 1000
-			dim: 10 
-			dim: 1 
-		}
-		shape {
-			dim: 1000
-			dim: 10  		
-		}
-		shape {
-			dim: 1000
-			dim: 1  		
+			dim: 512
+			dim: 11		
 		}
 	
 	}
 	
 }
+
 
 layer {
   name: "rnn1"
@@ -32,7 +36,7 @@ layer {
   bottom: "clip"
   top: "rnn1"
   recurrent_param {
-    num_output: 50
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -43,24 +47,15 @@ layer {
 }
 
 
-layer {
-	name: "Drop1"
-	type: "Dropout"
-	bottom: "rnn1"
-	top: "rnn1"
-	dropout_param {
-		dropout_ratio: 0.4
-	}
-}
 
 layer {
   name: "rnn2"
   type: "RNN"
-  bottom: "rnn1"
+  bottom: "data"
   bottom: "clip"
   top: "rnn2"
   recurrent_param {
-    num_output: 50
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -70,105 +65,15 @@ layer {
   }
 }
 
-layer {
-	name: "Drop2"
-	type: "Dropout"
-	bottom: "rnn2"
-	top: "rnn2"
-	dropout_param {
-		dropout_ratio: 0.4
-	}
-} 
-
-layer {
-  name: "rnn3"
-  type: "RNN"
-  bottom: "rnn2"
-  bottom: "clip"
-  top: "rnn3"
-  recurrent_param {
-    num_output: 50
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-layer {
-	name: "Drop3"
-	type: "Dropout"
-	bottom: "rnn3"
-	top: "rnn3"
-	dropout_param {
-		dropout_ratio: 0.4
-	}
-} 
-
-layer {
-  name: "rnn4"
-  type: "RNN"
-  bottom: "rnn3"
-  bottom: "clip"
-  top: "rnn4"
-  recurrent_param {
-    num_output: 50
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-layer {
-	name: "Drop4"
-	type: "Dropout"
-	bottom: "rnn4"
-	top: "rnn4"
-	dropout_param {
-		dropout_ratio: 0.4
-	}
-} 
-
-layer {
-  name: "rnn5"
-  type: "RNN"
-  bottom: "rnn4"
-  bottom: "clip"
-  top: "rnn5"
-  recurrent_param {
-    num_output: 50
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-layer {
-	name: "Drop5"
-	type: "Dropout"
-	bottom: "rnn5"
-	top: "rnn5"
-	dropout_param {
-		dropout_ratio: 0.4
-	}
-} 
 
 layer {
   name: "out"
   type: "InnerProduct"
-  bottom: "rnn5"
+  bottom: "rnn2"
   top: "out"
 
   inner_product_param {
-    num_output: 9
+    num_output: 8
     weight_filler {
       type: "gaussian"
       std: 0.1

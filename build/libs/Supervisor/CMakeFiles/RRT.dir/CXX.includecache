@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/RRT.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/RRT.cpp
 vector
 -
 iostream
@@ -22,13 +22,13 @@ cstdlib
 cfloat
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.hpp
 RRT.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/RRT.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/RRT.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/RRT.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/RRT.hpp
 vector
 -
 string
@@ -36,11 +36,11 @@ string
 iostream
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 string
 -
 vector
@@ -50,11 +50,11 @@ functional
 set
 -
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Supervisor.hpp
 iostream
 -
 vector
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/Supervisor/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/Supervisor/Scenario.hpp
 

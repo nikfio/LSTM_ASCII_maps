@@ -149,6 +149,8 @@ int Astar::search_path(float& PathCost, CoordinateList& Path, int& index, double
 			//cout << "Current node is not on OPEN list \n";
 		}
 
+		nodes_exp++;
+
 		for (int i = 0; i < direction.size(); i++) {
                 	Pixel newCoordinates(current->pix + direction[i]);
 			
@@ -160,18 +162,16 @@ int Astar::search_path(float& PathCost, CoordinateList& Path, int& index, double
 			Node *newNode = &PathMap.coord[newCoordinates.x][newCoordinates.y];
 			
 
-           		if ( detectCollision(newNode) ) {
+           	if ( detectCollision(newNode) ) {
 				//cout << "Collision DETECTED\n";
 				continue;
-            		}
+            	}
 			
 			
 			
 			if ( findNodeOnList(closedSet, newCoordinates) ) {
 				continue;
 			}
-		
-			nodes_exp++;
 			
 			if ( direction.size() == 8 ) {
 				if( i < 4 ) {
@@ -293,6 +293,8 @@ int Astar::search_path(float& PathCost, CoordinateList& Path, Pixel& source_, Pi
 			//cout << "Current node is not on OPEN list \n";
 		}
 
+		nodes_exp++;
+
 		for (int i = 0; i < direction.size(); i++) {
                 	Pixel newCoordinates(current->pix + direction[i]);
 			
@@ -304,17 +306,15 @@ int Astar::search_path(float& PathCost, CoordinateList& Path, Pixel& source_, Pi
 			Node *newNode = &PathMap.coord[newCoordinates.x][newCoordinates.y];
 			
 
-           		if ( detectCollision(newNode) ) {
+           	if ( detectCollision(newNode) ) {
 				//cout << "Collision DETECTED\n";
 				continue;
-            		}
+            	}
 			
 			
 			if ( findNodeOnList(closedSet, newCoordinates) ) {
 				continue;
 			}
-	
-			nodes_exp++;
 			
 			if ( direction.size() == 8 ) {
 				if( i < 4 ) {

@@ -33,7 +33,7 @@ DEFINE_bool(train, true, "Execute train and validation");
 DEFINE_bool(online, false, "Execute online testing");
 DEFINE_bool(resume, false, "Execute training and validation process resuming a trained net .caffemodel");
 DEFINE_bool(diagonal, true, "Allow diagonal move");
-DEFINE_string(folders, "../movingAI/Random25/Scenarios/,../movingAI/Mazes_2w/Scenarios/,../movingAI/Mazes_4w/Scenarios/,../movingAI/Random40/Scenarios/", 
+DEFINE_string(folders, "../movingAI/Random25/Scenarios/,../movingAI/Mazes_2w/Scenarios/,../movingAI/Mazes_4w/Scenarios/,../movingAI/Random40/Scenarios/,../movingAI/DragonAge/Scenarios/", 
 			"Path to the folders containing files with .scen extension \n"
 			"separated by comma\n");
 DEFINE_int32(train_maps, 5, "Number of the maps where paths are picked for the training set");

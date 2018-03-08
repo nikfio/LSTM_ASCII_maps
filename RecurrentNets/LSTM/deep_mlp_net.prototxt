@@ -1,4 +1,4 @@
-name: "MLP-5-64"
+name: "MLP-4-64"
 
 layer {
   name: "data"
@@ -6,8 +6,8 @@ layer {
   top: "data"
   top: "label"
   data_param {
-    source: "/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/Datasets/Train_inputs-11_102400-300-5-2-23-19-0-lmdb"
-    batch_size: 2048
+    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/ceiled/Train_inputs-11_1024000-300-10-3-4-23-9-lmdb"
+    batch_size: 10000
     backend: LMDB
   }
  
@@ -19,7 +19,7 @@ layer {
 	top:  "clip"
 	input_param {
 		shape {
-			dim: 2048
+			dim: 10000
 			dim: 11  		
 		}
 	

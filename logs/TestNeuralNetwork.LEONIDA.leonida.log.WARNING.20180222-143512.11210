@@ -1,4 +1,0 @@
-Log file created at: 2018/02/22 14:35:12
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0222 14:35:12.394345 11210 net.cpp:375] Top blob 'out' produced by multiple sources.

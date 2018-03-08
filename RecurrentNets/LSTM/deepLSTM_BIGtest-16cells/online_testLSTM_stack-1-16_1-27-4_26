@@ -1,0 +1,25 @@
+ONLINE TEST: A* PERFORMANCE: 
+ Total_paths = 20 
+ Astar_unsolved: 0 
+ Astar_total_length = 1311.864380 
+ Astar_mean_leangth = 65.593216 
+ Astar_total_time = 0.010968 
+ Astar_mean_time = 0.000548  
+  Astar_mean_nodes_expanded = 418.200012 
+ ONLINE TEST: A* PERFORMANCE comparison with net: 
+ Total_paths = 9 
+ Astar_unsolved: 0 
+ Astar_total_length = 423.161469 
+ Astar_mean_leangth = 47.017941 
+ Astar_total_time = 0.001968 
+ Astar_mean_time = 0.000219  
+  Astar_mean_nodes_expanded = 257.111115 
+ ONLINE TEST: NETWORK PERFORMANCE: LSTM_stack-1-16 
+ Total_paths = 9 
+ Net_unsolved = 11 
+ Net_total_length = 497.458069 
+ Net_mean_length = 55.273117 
+ Net_total_time = 0.029063 
+ Net_mean_time = 0.003229 
+  Net_mean_nodes_expanded = 46.666668 
+ 

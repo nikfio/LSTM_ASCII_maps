@@ -8,7 +8,7 @@ src/CMakeFiles/TestNeuralNetwork.dir/TestNeuralNetwork.cpp.o
  ../libs/NeuralNetwork/TrainValidateRNN.hpp
  ../libs/Supervisor/Scenario.hpp
  ../libs/Supervisor/Supervisor.hpp
- /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/TestNeuralNetwork.cpp
+ /home/leonida/ThesisCode/LSTM_ASCII_maps/src/TestNeuralNetwork.cpp
  /usr/include/atlas/cblas.h
  /usr/local/caffe/build/src/caffe/proto/caffe.pb.h
  /usr/local/caffe/include/caffe/blob.hpp

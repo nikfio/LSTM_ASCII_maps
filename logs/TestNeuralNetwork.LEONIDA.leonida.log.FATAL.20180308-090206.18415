@@ -1,0 +1,4 @@
+Log file created at: 2018/03/08 09:02:06
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0308 09:02:06.864358 18415 cudnn_tanh_layer.cpp:13] Check failed: status == CUDNN_STATUS_SUCCESS (4 vs. 0)  CUDNN_STATUS_INTERNAL_ERROR

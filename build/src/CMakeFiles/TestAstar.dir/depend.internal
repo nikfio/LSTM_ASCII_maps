@@ -4,4 +4,4 @@
 src/CMakeFiles/TestAstar.dir/TestAstar.cpp.o
  ../libs/Supervisor/Scenario.hpp
  ../libs/Supervisor/Supervisor.hpp
- /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/src/TestAstar.cpp
+ /home/leonida/ThesisCode/LSTM_ASCII_maps/src/TestAstar.cpp

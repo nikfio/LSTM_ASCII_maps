@@ -1,0 +1,9 @@
+Log file created at: 2018/03/08 09:24:12
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0308 09:24:12.664752 18637 TestNeuralNetwork.cpp:121]  steps tail size: 1
+I0308 09:24:14.033021 18637 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0308 09:24:14.033044 18637 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0308 09:24:14.256608 18637 TrainVal_db.cpp:78] GPU mode
+I0308 09:24:14.256623 18637 TrainVal_db.cpp:84] ../RecurrentNets/deep_rnn_solver.prototxt
+F0308 09:24:14.267040 18637 upgrade_proto.cpp:88] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: ../RecurrentNets/deep_stack_rnn_net.prototxt

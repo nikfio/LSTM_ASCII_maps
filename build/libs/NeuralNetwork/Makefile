@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv
+CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build
+CMAKE_BINARY_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork/CMakeFiles/progress.marks
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles 0
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork/CMakeFiles/progress.marks
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/clean
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/preinstall
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/preinstall
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libs/NeuralNetwork/CMakeFiles/Build_set.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/Build_set.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/Build_set.dir/rule
 .PHONY : libs/NeuralNetwork/CMakeFiles/Build_set.dir/rule
 
 # Convenience name for target.
@@ -109,12 +109,12 @@ Build_set: libs/NeuralNetwork/CMakeFiles/Build_set.dir/rule
 
 # fast build rule for target.
 Build_set/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/build
 .PHONY : Build_set/fast
 
 # Convenience name for target.
 libs/NeuralNetwork/CMakeFiles/Common_net.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/Common_net.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/Common_net.dir/rule
 .PHONY : libs/NeuralNetwork/CMakeFiles/Common_net.dir/rule
 
 # Convenience name for target.
@@ -123,12 +123,12 @@ Common_net: libs/NeuralNetwork/CMakeFiles/Common_net.dir/rule
 
 # fast build rule for target.
 Common_net/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/build
 .PHONY : Common_net/fast
 
 # Convenience name for target.
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/rule:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/rule
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f CMakeFiles/Makefile2 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/rule
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/rule
 
 # Convenience name for target.
@@ -137,15 +137,39 @@ TrainValidateRNN: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/rule
 
 # fast build rule for target.
 TrainValidateRNN/fast:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build
 .PHONY : TrainValidateRNN/fast
+
+Build_db.o: Build_db.cpp.o
+.PHONY : Build_db.o
+
+# target to build an object file
+Build_db.cpp.o:
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o
+.PHONY : Build_db.cpp.o
+
+Build_db.i: Build_db.cpp.i
+.PHONY : Build_db.i
+
+# target to preprocess a source file
+Build_db.cpp.i:
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.i
+.PHONY : Build_db.cpp.i
+
+Build_db.s: Build_db.cpp.s
+.PHONY : Build_db.s
+
+# target to generate assembly for a file
+Build_db.cpp.s:
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.s
+.PHONY : Build_db.cpp.s
 
 Build_set.o: Build_set.cpp.o
 .PHONY : Build_set.o
 
 # target to build an object file
 Build_set.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.o
 .PHONY : Build_set.cpp.o
 
 Build_set.i: Build_set.cpp.i
@@ -153,7 +177,7 @@ Build_set.i: Build_set.cpp.i
 
 # target to preprocess a source file
 Build_set.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.i
 .PHONY : Build_set.cpp.i
 
 Build_set.s: Build_set.cpp.s
@@ -161,7 +185,7 @@ Build_set.s: Build_set.cpp.s
 
 # target to generate assembly for a file
 Build_set.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Build_set.dir/build.make libs/NeuralNetwork/CMakeFiles/Build_set.dir/Build_set.cpp.s
 .PHONY : Build_set.cpp.s
 
 Common_net.o: Common_net.cpp.o
@@ -169,7 +193,7 @@ Common_net.o: Common_net.cpp.o
 
 # target to build an object file
 Common_net.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.o
 .PHONY : Common_net.cpp.o
 
 Common_net.i: Common_net.cpp.i
@@ -177,7 +201,7 @@ Common_net.i: Common_net.cpp.i
 
 # target to preprocess a source file
 Common_net.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.i
 .PHONY : Common_net.cpp.i
 
 Common_net.s: Common_net.cpp.s
@@ -185,7 +209,7 @@ Common_net.s: Common_net.cpp.s
 
 # target to generate assembly for a file
 Common_net.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/Common_net.dir/build.make libs/NeuralNetwork/CMakeFiles/Common_net.dir/Common_net.cpp.s
 .PHONY : Common_net.cpp.s
 
 OnlineRNN.o: OnlineRNN.cpp.o
@@ -193,7 +217,7 @@ OnlineRNN.o: OnlineRNN.cpp.o
 
 # target to build an object file
 OnlineRNN.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o
 .PHONY : OnlineRNN.cpp.o
 
 OnlineRNN.i: OnlineRNN.cpp.i
@@ -201,7 +225,7 @@ OnlineRNN.i: OnlineRNN.cpp.i
 
 # target to preprocess a source file
 OnlineRNN.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i
 .PHONY : OnlineRNN.cpp.i
 
 OnlineRNN.s: OnlineRNN.cpp.s
@@ -209,7 +233,7 @@ OnlineRNN.s: OnlineRNN.cpp.s
 
 # target to generate assembly for a file
 OnlineRNN.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s
 .PHONY : OnlineRNN.cpp.s
 
 TrainVal_db.o: TrainVal_db.cpp.o
@@ -217,7 +241,7 @@ TrainVal_db.o: TrainVal_db.cpp.o
 
 # target to build an object file
 TrainVal_db.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o
 .PHONY : TrainVal_db.cpp.o
 
 TrainVal_db.i: TrainVal_db.cpp.i
@@ -225,7 +249,7 @@ TrainVal_db.i: TrainVal_db.cpp.i
 
 # target to preprocess a source file
 TrainVal_db.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i
 .PHONY : TrainVal_db.cpp.i
 
 TrainVal_db.s: TrainVal_db.cpp.s
@@ -233,7 +257,7 @@ TrainVal_db.s: TrainVal_db.cpp.s
 
 # target to generate assembly for a file
 TrainVal_db.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s
 .PHONY : TrainVal_db.cpp.s
 
 TrainValidateRNN.o: TrainValidateRNN.cpp.o
@@ -241,7 +265,7 @@ TrainValidateRNN.o: TrainValidateRNN.cpp.o
 
 # target to build an object file
 TrainValidateRNN.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o
 .PHONY : TrainValidateRNN.cpp.o
 
 TrainValidateRNN.i: TrainValidateRNN.cpp.i
@@ -249,7 +273,7 @@ TrainValidateRNN.i: TrainValidateRNN.cpp.i
 
 # target to preprocess a source file
 TrainValidateRNN.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i
 .PHONY : TrainValidateRNN.cpp.i
 
 TrainValidateRNN.s: TrainValidateRNN.cpp.s
@@ -257,32 +281,8 @@ TrainValidateRNN.s: TrainValidateRNN.cpp.s
 
 # target to generate assembly for a file
 TrainValidateRNN.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s
 .PHONY : TrainValidateRNN.cpp.s
-
-build_db.o: build_db.cpp.o
-.PHONY : build_db.o
-
-# target to build an object file
-build_db.cpp.o:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o
-.PHONY : build_db.cpp.o
-
-build_db.i: build_db.cpp.i
-.PHONY : build_db.i
-
-# target to preprocess a source file
-build_db.cpp.i:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.i
-.PHONY : build_db.cpp.i
-
-build_db.s: build_db.cpp.s
-.PHONY : build_db.s
-
-# target to generate assembly for a file
-build_db.cpp.s:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.s
-.PHONY : build_db.cpp.s
 
 # Help Target
 help:
@@ -295,6 +295,9 @@ help:
 	@echo "... TrainValidateRNN"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Build_db.o"
+	@echo "... Build_db.i"
+	@echo "... Build_db.s"
 	@echo "... Build_set.o"
 	@echo "... Build_set.i"
 	@echo "... Build_set.s"
@@ -310,9 +313,6 @@ help:
 	@echo "... TrainValidateRNN.o"
 	@echo "... TrainValidateRNN.i"
 	@echo "... TrainValidateRNN.s"
-	@echo "... build_db.o"
-	@echo "... build_db.i"
-	@echo "... build_db.s"
 .PHONY : help
 
 
@@ -324,6 +324,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

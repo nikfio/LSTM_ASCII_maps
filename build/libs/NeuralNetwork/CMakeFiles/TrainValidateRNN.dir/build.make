@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv
+CMAKE_SOURCE_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build
+CMAKE_BINARY_DIR = /home/leonida/ThesisCode/LSTM_ASCII_maps/build
 
 # Include any dependencies generated for this target.
 include libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/depend.make
@@ -51,17 +51,17 @@ include libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o: ../libs/NeuralNetwork/TrainValidateRNN.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o -c /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainValidateRNN.cpp
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o -c /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainValidateRNN.cpp
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainValidateRNN.cpp > CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainValidateRNN.cpp > CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.i
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainValidateRNN.cpp -o CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainValidateRNN.cpp -o CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.s
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o.requires:
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o.requires
@@ -74,17 +74,17 @@ libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o.provid
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o: ../libs/NeuralNetwork/OnlineRNN.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o -c /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/OnlineRNN.cpp
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o -c /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/OnlineRNN.cpp
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/OnlineRNN.cpp > CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/OnlineRNN.cpp > CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.i
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/OnlineRNN.cpp -o CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/OnlineRNN.cpp -o CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.s
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o.requires:
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o.requires
@@ -97,17 +97,17 @@ libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o.provides.buil
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o: ../libs/NeuralNetwork/TrainVal_db.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o -c /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainVal_db.cpp
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o -c /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainVal_db.cpp
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainVal_db.cpp > CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainVal_db.cpp > CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.i
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/TrainVal_db.cpp -o CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/TrainVal_db.cpp -o CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.s
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o.requires:
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o.requires
@@ -118,35 +118,35 @@ libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o.provides: l
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o.provides.build: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o: ../libs/NeuralNetwork/build_db.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/CMakeFiles $(CMAKE_PROGRESS_4)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o -c /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/build_db.cpp
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/flags.make
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o: ../libs/NeuralNetwork/Build_db.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/leonida/ThesisCode/LSTM_ASCII_maps/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o"
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o -c /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_db.cpp
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrainValidateRNN.dir/build_db.cpp.i"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/build_db.cpp > CMakeFiles/TrainValidateRNN.dir/build_db.cpp.i
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.i"
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_db.cpp > CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.i
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrainValidateRNN.dir/build_db.cpp.s"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/build_db.cpp -o CMakeFiles/TrainValidateRNN.dir/build_db.cpp.s
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.s"
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && /usr/bin/g++-5  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_db.cpp -o CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.s
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.requires:
-.PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.requires
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.requires:
+.PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.requires
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.provides: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.requires
-	$(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.provides.build
-.PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.provides
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.provides: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.requires
+	$(MAKE) -f libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.provides.build
+.PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.provides
 
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.provides.build: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.provides.build: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o
 
 # Object files for target TrainValidateRNN
 TrainValidateRNN_OBJECTS = \
 "CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o" \
 "CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o" \
 "CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o" \
-"CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o"
+"CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o"
 
 # External object files for target TrainValidateRNN
 TrainValidateRNN_EXTERNAL_OBJECTS =
@@ -154,12 +154,12 @@ TrainValidateRNN_EXTERNAL_OBJECTS =
 libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o
 libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o
 libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o
-libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o
+libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o
 libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build.make
 libs/NeuralNetwork/libTrainValidateRNN.a: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libTrainValidateRNN.a"
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -P CMakeFiles/TrainValidateRNN.dir/cmake_clean_target.cmake
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TrainValidateRNN.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -P CMakeFiles/TrainValidateRNN.dir/cmake_clean_target.cmake
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TrainValidateRNN.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build: libs/NeuralNetwork/libTrainValidateRNN.a
@@ -168,14 +168,14 @@ libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build: libs/NeuralNetwork/lib
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainValidateRNN.cpp.o.requires
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/OnlineRNN.cpp.o.requires
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/TrainVal_db.cpp.o.requires
-libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/build_db.cpp.o.requires
+libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires: libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/Build_db.cpp.o.requires
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/requires
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/clean:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -P CMakeFiles/TrainValidateRNN.dir/cmake_clean.cmake
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork && $(CMAKE_COMMAND) -P CMakeFiles/TrainValidateRNN.dir/cmake_clean.cmake
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/clean
 
 libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/depend:
-	cd /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leonida/ThesisCode/NN-Roomba/SimulationEnv /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork /home/leonida/ThesisCode/NN-Roomba/SimulationEnv/build/libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/leonida/ThesisCode/LSTM_ASCII_maps/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leonida/ThesisCode/LSTM_ASCII_maps /home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork /home/leonida/ThesisCode/LSTM_ASCII_maps/build /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork /home/leonida/ThesisCode/LSTM_ASCII_maps/build/libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : libs/NeuralNetwork/CMakeFiles/TrainValidateRNN.dir/depend
 

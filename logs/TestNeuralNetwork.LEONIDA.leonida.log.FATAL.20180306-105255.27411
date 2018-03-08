@@ -1,0 +1,4 @@
+Log file created at: 2018/03/06 10:52:55
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0306 10:52:55.680218 27411 net.cpp:375] Top blob 'rnn1' produced by multiple sources.

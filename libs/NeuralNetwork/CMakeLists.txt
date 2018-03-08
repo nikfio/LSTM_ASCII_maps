@@ -44,7 +44,7 @@ add_library (Common_net Common_net.cpp)
 
 add_library (Build_set Build_set.cpp)
 
-add_library (TrainValidateRNN TrainValidateRNN.cpp OnlineRNN.cpp TrainVal_db.cpp build_db.cpp)
+add_library (TrainValidateRNN TrainValidateRNN.cpp OnlineRNN.cpp TrainVal_db.cpp Build_db.cpp)
 
 # linking libraries needed for source files
 target_link_libraries(Common_net ${LIBRARY} Scenario Supervisor)

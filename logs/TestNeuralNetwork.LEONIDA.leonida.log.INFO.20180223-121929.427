@@ -1,4 +1,0 @@
-Log file created at: 2018/02/23 12:19:29
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0223 12:19:29.003911   427 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions

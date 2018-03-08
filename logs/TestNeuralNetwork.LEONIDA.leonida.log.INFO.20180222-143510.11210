@@ -1,9 +1,0 @@
-Log file created at: 2018/02/22 14:35:10
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0222 14:35:10.170616 11210 TestNeuralNetwork.cpp:121]  steps tail size: 1
-I0222 14:35:11.566838 11210 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0222 14:35:11.566864 11210 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0222 14:35:11.893609 11210 TrainVal_db.cpp:78] GPU mode
-I0222 14:35:11.893628 11210 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_mlp_solver.prototxt
-F0222 14:35:12.394345 11210 net.cpp:375] Top blob 'out' produced by multiple sources.

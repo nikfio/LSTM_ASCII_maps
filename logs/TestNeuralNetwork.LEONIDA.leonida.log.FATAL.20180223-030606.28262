@@ -1,4 +1,0 @@
-Log file created at: 2018/02/23 03:06:06
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0223 03:06:06.688928 28262 insert_splits.cpp:29] Unknown bottom blob 'lstm_concat' (layer 'out', bottom index 0)

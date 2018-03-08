@@ -6,7 +6,7 @@ layer {
   top: "data"
   top: "label"
   data_param {
-    source: "/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/Datasets/Validate_inputs-11_10240-300-2-3-23-19-0-lmdb"
+    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/Validate_inputs-11_10240-300-2-3-20-20-34-lmdb"
     batch_size: 2048
     backend: LMDB
   }
@@ -20,7 +20,7 @@ layer {
 	input_param {
 		shape {
 			dim: 2048
-			dim: 11  		
+			dim: 11		
 		}
 	
 	}
@@ -36,7 +36,7 @@ layer {
   bottom: "clip"
   top: "lstm1"
   recurrent_param {
-    num_output: 16
+    num_output:  8
     weight_filler {
       type: "xavier"
     }
@@ -53,7 +53,7 @@ layer {
   bottom: "clip"
   top: "lstm2"
   recurrent_param {
-    num_output: 16
+    num_output:  8
     weight_filler {
       type: "xavier"
     }

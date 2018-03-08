@@ -24,17 +24,17 @@ vector
 Scenario.hpp
 ../libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Build_set.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 vector
 -
 string
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Common_net.cpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.cpp
 iostream
 -
 cstdlib
@@ -44,15 +44,15 @@ vector
 math.h
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 Common_net.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Common_net.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
 Build_set.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Build_set.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Common_net.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
 string
 -
 vector
@@ -68,11 +68,11 @@ caffe/solver.hpp
 caffe/util/io.hpp
 -
 Scenario.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Scenario.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Supervisor.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 Build_set.hpp
-/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/libs/NeuralNetwork/Build_set.hpp
+/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 
 /usr/include/atlas/cblas.h
 

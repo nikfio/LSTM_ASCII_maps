@@ -1,0 +1,4 @@
+Log file created at: 2018/03/08 21:24:56
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0308 21:24:56.317529 25456 TestNeuralNetwork.cpp:121]  steps tail size: 1
