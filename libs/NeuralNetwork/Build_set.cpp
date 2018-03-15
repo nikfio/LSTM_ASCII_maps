@@ -40,7 +40,7 @@ const int MINIMAL_COMPLEXITY = 0;
 
 const int MINIMAL_LENGTH = 10;
 
-const int MAXIMUM_COMPLEXITY = 400;
+const int MAXIMUM_COMPLEXITY = 750;
 
 /* how much difference between cost path found by supervisor
  * and supposed optimal cost (length) 

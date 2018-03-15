@@ -130,7 +130,6 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 	LOG(INFO) << "TRAIN INFO: batch size: " << train_batch_size;
 	LOG(INFO) << "Forward - backward per batch (gradients accumulated): " << FLAGS_iter_size;
 	LOG(INFO) << "Number of updates per batch: " << FLAGS_batch_updates;
-	LOG(INFO) << "Unrolling for " << TIME_SEQUENCE << " timesteps";
 	
 	string matlab_plot = "Test_" + net->name() + "_" + to_string(local->tm_mon+1) 
 				     + "-" + to_string(local->tm_mday) + "-" + to_string(local->tm_hour) 
@@ -152,7 +151,6 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 				    " weight_decay = %f \n"
                         " state_input_size = %d \n " 
 				    " max_path_length = %d \n "	
-				    " time_seq_length = %d \n "
 				    " loss_data = [ \n",
 				     net->name().c_str(), local->tm_mon+1, 
 				     local->tm_mday, local->tm_hour, local->tm_min,
@@ -161,8 +159,7 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 				     solver->param().base_lr(),
 				     solver->param().weight_decay(),
 					sequence_length,
-					FLAGS_max_length,
-					TIME_SEQUENCE );
+					FLAGS_max_length );
 	
 	if(print_check <= 0) {
 	   printf("File: writetofile() failed\n");
@@ -182,12 +179,12 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 
 	FLAGS_minloglevel = 1;	
 
-		// populate clip blobs - fixed time sequence means clip blob is constant 
+	// populate clip blobs - fixed time sequence means clip blob is constant 
 	for( int i = 0; i < blobClip->shape(0) / sequence_length; i++) {
 			
-		if( i % TIME_SEQUENCE == 0 ) {
+		if( i == 0 ) {
 			for(int j = 0; j < sequence_length; j++) {
-				blobClip->mutable_cpu_data()[i * sequence_length + j] = 0;
+				blobClip->mutable_cpu_data()[j] = 0;
 				test_blobClip->mutable_cpu_data()[i * sequence_length + j] = 0;
 			}
 		}
@@ -197,7 +194,9 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 				test_blobClip->mutable_cpu_data()[i * sequence_length + j] = 1;
 			}
 		}
+	
 	}
+
 
 	for(epoch = 1; epoch <= FLAGS_epochs; epoch++) { // training and validate started
 		
@@ -205,7 +204,6 @@ TrainValidateRNN::TrainValidateRNN(string& direction_mode)
 		Train_loss = 0.0f;
 		Train_accu = 0.0f;
 		
-
 		for(int k = 1; k <= train_batch_num; k++) { // training epoch				
 
 			solver->Step(FLAGS_batch_updates);		

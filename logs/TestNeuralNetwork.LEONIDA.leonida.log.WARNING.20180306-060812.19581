@@ -1,4 +1,0 @@
-Log file created at: 2018/03/06 06:08:12
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0306 06:08:12.194339 19581 TrainVal_db.cpp:111] Check failed: sequence_length == blobData->shape(1) (10 vs. 11) sequence_length and data shape(1) must be equal

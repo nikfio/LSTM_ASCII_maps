@@ -11,6 +11,6 @@
   display: 102
   max_iter: 100000
 #  snapshot: 100000
-#  snapshot_prefix: "../RecurrentNets/LSTM/deepMLP-BIGGEST/MLP_ceil_deep-stack-4-64-2048-11_MazesRandom"
+#  snapshot_prefix: "../RecurrentNets/LSTM/deepMLP-BIGGEST/MLP_deep-stack-4-64-2048-11_MazesRandom"
   solver_type: SGD
   solver_mode: GPU

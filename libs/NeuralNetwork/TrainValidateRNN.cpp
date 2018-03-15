@@ -110,6 +110,11 @@ void TrainValidateRNN::build_input_batch(int set_batch_num, setPaths& set) {
 
 			}
 
+			if(steps_parsed % TIME_SEQUENCE == 0)
+				blobClip_->mutable_cpu_data()[data_index] = 0;
+			else
+				blobClip_->mutable_cpu_data()[data_index] = 1;
+
 //			for(int i = 0; i < sequence_length; i++) {
 //				cout << blobData_->cpu_data()[data_index * sequence_length + i] <<  "  ";
 //			}
@@ -237,8 +242,8 @@ TrainValidateRNN::TrainValidateRNN( string& direction_mode,
 	test_blobSoft = test_net->blob_by_name("softmax");
 	test_blobArgmax = test_net->blob_by_name("argmax");
 
-	CHECK_EQ(sequence_length, blobData->shape(1)) << "train net: seq_size and data shape(1) must be equal";
-	CHECK_EQ(sequence_length, test_blobData->shape(1)) << "test net: sequence_length and data shape(1) must be equal";
+	CHECK_EQ(sequence_length, blobData->shape(2)) << "train net: seq_size and data shape(1) must be equal";
+	CHECK_EQ(sequence_length, test_blobData->shape(2)) << "test net: sequence_length and data shape(1) must be equal";
 
 	if(FLAGS_resume) {
 		LOG(INFO) << "Copying weights from " << FLAGS_trained;
@@ -365,49 +370,49 @@ TrainValidateRNN::TrainValidateRNN( string& direction_mode,
 			Train_loss += blobLoss->cpu_data()[0]; 
 			Train_accu += blobAccu->cpu_data()[0];
 
-//			char answer;
-//			cout << "TRAINING: Want to check batch output? (y/n)" << endl;
-//			cin >> answer;
-//			if ( answer == 'y' ) {
+			char answer;
+			cout << "TRAINING: Want to check batch output? (y/n)" << endl;
+			cin >> answer;
+			if ( answer == 'y' ) {
 
-//				for(int i = 0; i < train_batch_size; i++) {  
+				for(int i = 0; i < train_batch_size; i++) {  
 
-//					printf("Batch %d  sample %d  State input sequence: ", k, i );
-//					for(int j = 0; j < sequence_length; j++) {
-//						printf(" %.4f  ",  blobData->mutable_cpu_data()[i * sequence_length + j]);
-//					}
-//					cout << endl;
-//					for(int j = 0; j < sequence_length; j++) {
-//						printf(" %.0f  ",  blobClip->mutable_cpu_data()[i * sequence_length + j]);
-//					}
-//					cout << endl;
+					printf("Batch %d  sample %d  State input sequence: ", k, i );
+					for(int j = 0; j < sequence_length; j++) {
+						printf(" %.4f  ",  blobData->mutable_cpu_data()[i * sequence_length + j]);
+					}
+					cout << endl;
+					for(int j = 0; j < sequence_length; j++) {
+						printf(" %.0f  ",  blobClip->mutable_cpu_data()[i]);
+					}
+					cout << endl;
 
-//					printf("Batch %d  sample %d  NET OUTS: ", k, i);   
-//					for(int l=0; l < blobOut->shape(1); l++) { 
-//						printf("(%.3f %.3f)  ",
-//							blobOut->mutable_cpu_data()[i * blobOut->shape(1) + l],
-//							blobSoft->mutable_cpu_data()[i * blobSoft->shape(1) + l]);
-//					}
-//					cout << endl;
+					printf("Batch %d  sample %d  NET OUTS: ", k, i);   
+					for(int l=0; l < blobOut->shape(1); l++) { 
+						printf("(%.3f %.3f)  ",
+							blobOut->mutable_cpu_data()[i * blobOut->shape(1) + l],
+							blobSoft->mutable_cpu_data()[i * blobSoft->shape(1) + l]);
+					}
+					cout << endl;
 
-//					printf("Batch %d  sample %d  LABEL OUT: ", k, i); 
-//					printf(" %.0f  ", blobLabel->mutable_cpu_data()[i]);
+					printf("Batch %d  sample %d  LABEL OUT: ", k, i); 
+					printf(" %.0f  ", blobLabel->mutable_cpu_data()[i]);
 
-//					cout << endl;
+					cout << endl;
 
-//					printf("Batch %d  sample %d  Current Batch Loss: %.5f  Current Batch Accuracy: %.5f \n", 
-//							k, i, blobLoss->mutable_cpu_data()[0], blobAccu->mutable_cpu_data()[0] );
-//		
-//					cout << "Wanna pass forward? (y/n)" << endl;
-//					cin >> answer;
+					printf("Batch %d  sample %d  Current Batch Loss: %.5f  Current Batch Accuracy: %.5f \n", 
+							k, i, blobLoss->mutable_cpu_data()[0], blobAccu->mutable_cpu_data()[0] );
+		
+					cout << "Wanna pass forward? (y/n)" << endl;
+					cin >> answer;
 
-//					if(answer == 'y')
-//						break;
+					if(answer == 'y')
+						break;
 
-//				}
-//					
+				}
+					
 
-//			}
+			}
 			
 
 		} // training epoch finished

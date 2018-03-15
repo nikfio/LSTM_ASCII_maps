@@ -1,9 +1,0 @@
-Log file created at: 2018/03/05 00:14:53
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0305 00:14:53.967101 28746 TestNeuralNetwork.cpp:121]  steps tail size: 1
-I0305 00:14:56.702396 28746 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0305 00:14:56.702420 28746 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0305 00:14:56.933423 28746 TrainVal_db.cpp:78] GPU mode
-I0305 00:14:56.933449 28746 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_mlp_solver
-F0305 00:14:56.933491 28746 io.cpp:36] Check failed: fd != -1 (-1 vs. -1) File not found: ../RecurrentNets/LSTM/deep_mlp_solver

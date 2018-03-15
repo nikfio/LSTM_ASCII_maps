@@ -1,4 +1,4 @@
-name: "LSTM_stack-1-16"
+name: "LSTM_stack-2-8"
 
 layer {
   name: "data"
@@ -6,8 +6,8 @@ layer {
   top: "data"
   top: "label"
   data_param {
-    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/Validate_inputs-11_10240-300-2-3-20-20-34-lmdb"
-    batch_size: 2048
+    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/Validate_inputs-11_102400-300-2-10-27-8-16-lmdb"
+    batch_size: 512
     backend: LMDB
   }
  
@@ -19,7 +19,7 @@ layer {
 	top:  "clip"
 	input_param {
 		shape {
-			dim: 2048
+			dim: 512
 			dim: 11		
 		}
 	

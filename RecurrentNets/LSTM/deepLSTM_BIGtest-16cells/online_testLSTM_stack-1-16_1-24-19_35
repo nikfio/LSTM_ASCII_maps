@@ -1,9 +1,0 @@
-ONLINE TEST: A* PERFORMANCE: 
- Total_paths = 30 
- Astar_unsolved: 0 
- Astar_total_length = 1899.961914 
- Astar_mean_leangth = 63.332066 
- Astar_total_time = 0.026134 
- Astar_mean_time = 0.000871  
-  Astar_mean_nodes_expanded = 467.766663 
- 

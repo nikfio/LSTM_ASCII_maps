@@ -38,7 +38,7 @@
 
 using namespace caffe;
 
-const int TIME_SEQUENCE = 1000;
+const int TIME_SEQUENCE = 10;
 
 const int MIN_STATE_SIZE = 10;
 
@@ -89,9 +89,11 @@ int step = 0;
 int paths_parsed = 0;
 int steps_parsed = 0;
 int data_index = 0;
+int time_index = 0;
 int batch = 0;
 int online_index = 0;
 int prev_step = 0;
+
 
 vector<float> tail;
 

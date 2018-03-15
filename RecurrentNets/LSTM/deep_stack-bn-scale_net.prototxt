@@ -8,16 +8,16 @@ layer {
 	top:  "label"
 	input_param {
 		shape {
-			dim: 512	
+			dim: 10	
 			dim: 10 
-			dim: 1 
+			dim: 11 
 		}
 		shape {
-			dim: 512
+			dim: 10
 			dim: 10  		
 		}
 		shape {
-			dim: 512
+			dim: 100
 			dim: 1  		
 		}
 	

@@ -232,8 +232,8 @@ if(FLAGS_online && OnlinePaths.size() > 0 ) {
 		cout << OnlinePaths[i] << endl;
 }
 		
-ScenarioList TrainList(TrainPaths, TrainPaths.size(), 500);
-ScenarioList ValidateList(ValidatePaths, ValidatePaths.size(), 500);
+ScenarioList TrainList(TrainPaths, TrainPaths.size(), 1000);
+ScenarioList ValidateList(ValidatePaths, ValidatePaths.size(), 1000);
 
 setPaths TrainSet, ValidateSet;
 

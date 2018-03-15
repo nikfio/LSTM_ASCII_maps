@@ -1,4 +1,4 @@
-name: "LSTM_stack-1-64"
+name: "LSTM_stack-2-8"
 
 
 layer {
@@ -9,22 +9,23 @@ layer {
 	top:  "label"
 	input_param {
 		shape {
-			dim: 512	
+			dim: 10	
+			dim: 1
 			dim: 10 
-			dim: 1 
 		}
 		shape {
-			dim: 512
-			dim: 10  		
-		}
-		shape {
-			dim: 512
+			dim: 10
 			dim: 1  		
+		}
+		shape {
+			dim: 10
+			dim: 1
 		}
 	
 	}
 	
 }
+
 
 
 
@@ -35,7 +36,7 @@ layer {
   bottom: "clip"
   top: "lstm1"
   recurrent_param {
-    num_output: 64
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -44,8 +45,6 @@ layer {
     }
   }
 }
-
-
 
 
 layer {
@@ -55,7 +54,7 @@ layer {
   bottom: "clip"
   top: "lstm2"
   recurrent_param {
-    num_output: 64
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -65,111 +64,13 @@ layer {
   }
 }
 
-
-
-layer {
-  name: "lstm3"
-  type: "LSTM"
-  bottom: "lstm2"
-  bottom: "clip"
-  top: "lstm3"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-
-layer {
-  name: "lstm4"
-  type: "LSTM"
-  bottom: "lstm3"
-  bottom: "clip"
-  top: "lstm4"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-layer {
-  name: "lstm5"
-  type: "LSTM"
-  bottom: "lstm4"
-  bottom: "clip"
-  top: "lstm5"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-
-layer {
-  name: "lstm6"
-  type: "LSTM"
-  bottom: "lstm5"
-  bottom: "clip"
-  top: "lstm6"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-
-
-layer {
-  name: "lstm7"
-  type: "LSTM"
-  bottom: "lstm6"
-  bottom: "clip"
-  top: "lstm7"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
 
 
 
 layer {
   name: "out"
   type: "InnerProduct"
-  bottom: "lstm1"
+  bottom: "lstm2"
   top: "out"
 
   inner_product_param {
@@ -183,6 +84,7 @@ layer {
     }
   }
 }
+
 
 layer {
   name: "softmax"
@@ -199,12 +101,13 @@ layer {
   top: "argmax"
 }
 
+
 layer {
   name: "accuracy"
   type: "Accuracy"
   bottom: "softmax"
   bottom: "label"
-  top: "accuracy"  
+  top: "accuracy"
 }
 
 layer {

@@ -1,5 +1,0 @@
-Log file created at: 2018/03/06 05:27:07
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0306 05:27:07.223855 19286 net.cpp:956] Unknown blob name argmax
-W0306 05:27:07.224364 19286 net.cpp:956] Unknown blob name argmax
