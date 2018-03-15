@@ -18,7 +18,7 @@ Build instructions:
 
   1) place terminal in build directory
 
-  2) rm -r *  (I usually upload already built versions, so you have to delete everthing of the existing build)
+  2) rm -r *  (I usually upload already built versions, so you have to delete everything of the existing build)
 
   3) cmake ..
 
@@ -36,7 +36,7 @@ For more specified launch it's better to view src/TestNeuralNetwork to see the v
 
 	./src/TestNeuralNetwork --help
 	
-If you have suggestions or comments, feel free to contanct me.
+If you have suggestions or comments, feel free to contact me.
 
 
 
