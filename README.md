@@ -9,7 +9,8 @@ This repo builds agents to solve global path plannig:
 In particular, this is not an offline search like A* or similar, but it is an online search agent.
 The main feature and advantage is memory usage: just the current state occupies the agent memory, while A* has to potentially store the all map.
 
-Developing and testing on Ubuntu 16.04.3 LTS Xenial.
+Developing and testing on Ubuntu 14.04 LTS Trusty.
+Core libraries: cuda-8.0 working with GTX 1080Ti, CAFFE latest from the master branch of the main repository.
 
 Build instructions:
 
@@ -24,8 +25,6 @@ Build instructions:
   4) make
   
   - executables are in build/src/
-  
-  ca
 
 
 Default launch:
