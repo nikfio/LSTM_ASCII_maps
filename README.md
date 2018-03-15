@@ -1,39 +1,23 @@
-# NN-Roomba
-Neural network-based path planning for mobile robots.
+# LSTM as global path planner in ASCII maps based simulation environment
 
-This repo is meant to build a path planning method based on neural networks. 
 Simulation is conducted with MovingAI benchmarks.
-Test in real environment are performed on the Roomba 600 with a Hokuyo LRF.
 
-TASK LIST:
-  1) build a optimal path planning solver to provide label data for supervised learning --> COMPLETED for simulation
-     there it is implemented a supervisor based on the A* algorithm
-  
-  2) build libraries to train and validate a general neural network --> COMPLETD for simulation
-
-  3) develop new methods / test neural network solutions: ONGOING 
-
-	      @)now working on a LSTM neural network, first tests show improvements
-
-		with respect to feed-forward nets and deep feed-forward nets
-  
-	      @)investigating and starting to implement a way to use topological-like
-
-		map to reduce input dimension and computation time
-  
+This repo builds agents to solve global path plannig:
+	- high level
+	- low resolution
+	
+In particular, this is not an offline search like A* or similar, but it is an online search agent.
+The main feature and advantage is memory usage: just the current state occupies the agent memory, while A* has to potentially store the all map.
 
 Developing and testing on Ubuntu 16.04.3 LTS Xenial.
 
 Build instructions:
 
-  0) take care to change directories in /libs/NeuralNetwork/CMakeLists.txt 
-     to your equivalent Caffe installation folder and related,
-     if it does not work, ask for help.
-     UPDATE: soon a working build of CAFFE will be uploaded inside this repo
+  0) cmake files search for caffe in /usr/local, just like for cuda, fastest way is to copy your caffe build in there
 
   1) place terminal in build directory
 
-  2) rm -r *
+  2) rm -r *  (I usually upload already built versions, so you have to delete everthing of the existing build)
 
   3) cmake ..
 
@@ -41,21 +25,22 @@ Build instructions:
   
   - executables are in build/src/
   
-  
-Consider the same path-to-folder, directives for Simulation files location: 
-  -keep *.map.scen files in path-to-folder/Scenarios
-  -keep *.map files in path-to-folder/Maps
+  ca
 
 
-Usage:
+Default launch:
   from build directory
-  ./src/TestSupervisor path-to-Scenarios-folder [num of maps] [num test for each map] 
 
-  ./src/TestNeuralNetwork path-to-Scenarios-folder [num of maps for training set] [num of maps for validation set] ...
-					...        [amount of paths for Train set] [amount of paths for Validation set]
+ 	 ./src/TestNeuralNetwork 
+	 
+For more specified launch it's better to view src/TestNeuralNetwork to see the various gflags options, otherwise type 
+
+	./src/TestNeuralNetwork --help
+	
+If you have suggestions or comments, feel free to contanct me.
 
 
 
-Please, if you want, signal if nasty errors like segmentation fault occur.
+
 
 
