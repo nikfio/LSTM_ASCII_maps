@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 01:01:35
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 01:01:35.022758 28046 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 01:01:35.022927 28046 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 01:01:35.022933 28046 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:01:36.347535 28046 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.895953
+I0309 01:01:36.347570 28046 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:01:37.193593 28046 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.571827
+I0309 01:01:38.082928 28046 TrainValidateRNN.cpp:213] GPU mode
+I0309 01:01:38.082947 28046 TrainValidateRNN.cpp:219] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 01:01:38.440573 28046 softmax_loss_layer.cpp:47] Check failed: outer_num_ * inner_num_ == bottom[1]->count() (10 vs. 100) Number of labels must match number of predictions; e.g., if softmax axis == 1 and prediction shape is (N, C, H, W), label count (number of labels) must be N*H*W, with integer values in {0, 1, ..., C-1}.

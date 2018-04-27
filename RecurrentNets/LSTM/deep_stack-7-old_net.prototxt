@@ -1,4 +1,4 @@
-name: "LSTM_stack-1-64"
+name: "LSTM_stack-1-8"
 
 layer {
 	name: "Input"
@@ -8,22 +8,23 @@ layer {
 	top:  "label"
 	input_param {
 		shape {
-			dim: 512	
+			dim: 10	
+			dim: 1
 			dim: 10 
-			dim: 1 
 		}
 		shape {
-			dim: 512
-			dim: 10  		
-		}
-		shape {
-			dim: 512
+			dim: 10
 			dim: 1  		
+		}
+		shape {
+			dim: 10
+			dim: 1
 		}
 	
 	}
 	
 }
+
 
 
 
@@ -34,7 +35,7 @@ layer {
   bottom: "clip"
   top: "lstm1"
   recurrent_param {
-    num_output: 64
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -43,8 +44,6 @@ layer {
     }
   }
 }
-
-
 
 
 layer {
@@ -54,7 +53,7 @@ layer {
   bottom: "clip"
   top: "lstm2"
   recurrent_param {
-    num_output: 64
+    num_output: 8
     weight_filler {
       type: "xavier"
     }
@@ -64,111 +63,13 @@ layer {
   }
 }
 
-
-
-layer {
-  name: "lstm3"
-  type: "LSTM"
-  bottom: "lstm2"
-  bottom: "clip"
-  top: "lstm3"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-
-layer {
-  name: "lstm4"
-  type: "LSTM"
-  bottom: "lstm3"
-  bottom: "clip"
-  top: "lstm4"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-layer {
-  name: "lstm5"
-  type: "LSTM"
-  bottom: "lstm4"
-  bottom: "clip"
-  top: "lstm5"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-
-layer {
-  name: "lstm6"
-  type: "LSTM"
-  bottom: "lstm5"
-  bottom: "clip"
-  top: "lstm6"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
-
-
-
-
-layer {
-  name: "lstm7"
-  type: "LSTM"
-  bottom: "lstm6"
-  bottom: "clip"
-  top: "lstm7"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-
-}
 
 
 
 layer {
   name: "out"
   type: "InnerProduct"
-  bottom: "lstm1"
+  bottom: "lstm2"
   top: "out"
 
   inner_product_param {
@@ -182,6 +83,8 @@ layer {
     }
   }
 }
+
+
 
 layer {
   name: "softmax"
@@ -203,8 +106,9 @@ layer {
   type: "Accuracy"
   bottom: "softmax"
   bottom: "label"
-  top: "accuracy"  
+  top: "accuracy"
 }
+
 
 layer {
   name: "softmaxLoss"
@@ -212,180 +116,6 @@ layer {
   bottom: "out"
   bottom: "label"
   top: "loss"  
-}
-
-
-layer {
-  name: "lstm2"
-  type: "LSTM"
-  bottom: "lstm1"
-  bottom: "clip"
-  top: "lstm2"
-  recurrent_param {
-    num_output: 128
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-
-layer {
-	name: "Drop2"
-	type: "Dropout"
-	bottom: "lstm2"
-	top: "lstm2"
-	dropout_param {
-		dropout_ratio: 0.5
-	}
-} 
-
-
-
-layer {
-  name: "lstm3"
-  type: "LSTM"
-  bottom: "lstm2"
-  bottom: "clip"
-  top: "lstm3"
-  recurrent_param {
-    num_output: 128
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-
-layer {
-	name: "Drop3"
-	type: "Dropout"
-	bottom: "lstm3"
-	top: "lstm3"
-	dropout_param {
-		dropout_ratio: 0.5
-	}
-} 
-
-
-
-
-
-layer {
-  name: "lstm2"
-  type: "LSTM"
-  bottom: "lstm1"
-  bottom: "clip"
-  top: "lstm2"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-layer {
-  name: "lstm3"
-  type: "LSTM"
-  bottom: "lstm2"
-  bottom: "clip"
-  top: "lstm3"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-layer {
-  name: "lstm4"
-  type: "LSTM"
-  bottom: "lstm3"
-  bottom: "clip"
-  top: "lstm4"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-layer {
-  name: "lstm5"
-  type: "LSTM"
-  bottom: "lstm4"
-  bottom: "clip"
-  top: "lstm5"
-  recurrent_param {
-    num_output: 64
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-
-
-layer {
-  name: "lstm2_r"
-  type: "LSTM"
-  bottom: "lstm1_r"
-  bottom: "clip_r"
-  top: "lstm2_r"
-  recurrent_param {
-    num_output: 8
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
-}
-
-
-layer {
-  name: "lstm2_d"
-  type: "LSTM"
-  bottom: "lstm1_d"
-  bottom: "clip_d"
-  top: "lstm2_d"
-  recurrent_param {
-    num_output: 8
-    weight_filler {
-      type: "xavier"
-    }
-    bias_filler {
-      type: "constant"
-    }
-  }
 }
 
 

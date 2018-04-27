@@ -1,0 +1,4 @@
+Log file created at: 2018/03/09 18:45:02
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0309 18:45:02.073935  4712 net.cpp:686] Check failed: target_blobs[j]->shape() == source_blob->shape() Cannot share param 0 weights from layer 'lstm1'; shape mismatch.  Source param shape is 8 1 (8); target param shape is 16 1 (16)

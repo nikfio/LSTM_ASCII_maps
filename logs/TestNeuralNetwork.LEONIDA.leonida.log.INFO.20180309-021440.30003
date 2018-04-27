@@ -1,0 +1,13 @@
+Log file created at: 2018/03/09 02:14:40
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 02:14:40.595860 30003 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 02:14:40.596026 30003 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 02:14:40.596032 30003 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:14:41.930078 30003 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.902102
+I0309 02:14:41.930111 30003 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:14:42.775415 30003 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.56926
+I0309 02:14:43.654173 30003 TrainValidateRNN.cpp:207] GPU mode
+I0309 02:14:43.654187 30003 TrainValidateRNN.cpp:213] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+W0309 02:14:44.021914 30003 net.cpp:956] Unknown blob name accuracy
+F0309 02:14:44.022011 30003 TrainValidateRNN.cpp:240] Check failed: sequence_length == blobData->shape(1) (10 vs. 1) train net: seq_size and data shape(1) must be equal

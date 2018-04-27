@@ -10,12 +10,12 @@ layer {
 	input_param {
 		shape {
 			dim: 1
-			dim: 11 
+			dim: 10
 			dim: 1 
 		}
 		shape {
 			dim: 1
-			dim: 11  		
+			dim: 10	
 		}
 		shape {
 			dim: 1

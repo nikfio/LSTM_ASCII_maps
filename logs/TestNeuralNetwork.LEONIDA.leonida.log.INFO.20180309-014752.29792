@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 01:47:52
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 01:47:52.091517 29792 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 01:47:52.091672 29792 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 01:47:52.091692 29792 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:47:53.446350 29792 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.914904
+I0309 01:47:53.446385 29792 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:47:54.299006 29792 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.573018
+I0309 01:47:55.204792 29792 TrainValidateRNN.cpp:213] GPU mode
+I0309 01:47:55.204810 29792 TrainValidateRNN.cpp:219] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 01:47:55.575043 29792 layer.hpp:349] Check failed: ExactNumBottomBlobs() == bottom.size() (2 vs. 1) Accuracy Layer takes 2 bottom blob(s) as input.

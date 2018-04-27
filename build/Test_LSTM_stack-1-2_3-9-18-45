@@ -1,0 +1,12 @@
+TEST: LSTM_stack-1-2 DATE: 3 9 18:45 
+ PARAMETERS: 
+ TRAIN_SIZE = 102400 
+ VALID_SIZE = 10240 
+ train_batch_size = 256 
+ iter_size = 1 
+ batch_updates = 1 
+  base_learning_rate = 0.10000 
+ weight_decay = 0.000010 
+ state_input_size = 11 
+  max_path_length = 300 
+  loss_data = [ 

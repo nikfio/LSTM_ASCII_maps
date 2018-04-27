@@ -1,0 +1,8 @@
+Log file created at: 2018/03/09 03:04:29
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 03:04:29.649852 30913 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 03:04:29.650007 30913 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 03:04:29.827828 30913 TrainVal_db.cpp:78] GPU mode
+I0309 03:04:29.827847 30913 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 03:04:30.360265 30913 TrainVal_db.cpp:111] Check failed: sequence_length == blobData->shape(1) (10 vs. 11) sequence_length and data shape(1) must be equal

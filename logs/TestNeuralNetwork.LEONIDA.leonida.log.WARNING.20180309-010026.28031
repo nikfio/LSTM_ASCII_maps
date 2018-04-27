@@ -1,0 +1,4 @@
+Log file created at: 2018/03/09 01:00:26
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0309 01:00:26.226938 28031 loss_layer.cpp:19] Check failed: bottom[0]->shape(0) == bottom[1]->shape(0) (10 vs. 100) The data and label should have the same first dimension.

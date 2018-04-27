@@ -24,7 +24,7 @@ vector
 Scenario.hpp
 ../libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.cpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.cpp
 vector
 -
 iostream
@@ -34,37 +34,37 @@ cmath
 glog/logging.h
 -
 boost/scoped_ptr.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/boost/scoped_ptr.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/boost/scoped_ptr.hpp
 caffe/proto/caffe.pb.h
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/proto/caffe.pb.h
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/proto/caffe.pb.h
 caffe/util/db.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/db.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/db.hpp
 caffe/util/io.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/io.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/io.hpp
 caffe/util/rng.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/rng.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/rng.hpp
 caffe/util/format.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/format.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/caffe/util/format.hpp
 Scenario.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 Build_set.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 Common_net.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
 
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 vector
 -
 string
 -
 Scenario.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Common_net.hpp
 string
 -
 vector
@@ -80,11 +80,11 @@ caffe/solver.hpp
 caffe/util/io.hpp
 -
 Scenario.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Supervisor.hpp
 Build_set.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/libs/NeuralNetwork/Build_set.hpp
 
 /usr/include/atlas/cblas.h
 
@@ -483,8 +483,6 @@ cuComplex.h
 /usr/local/cuda/include/cuComplex.h
 cuda_fp16.h
 /usr/local/cuda/include/cuda_fp16.h
-library_types.h
-/usr/local/cuda/include/library_types.h
 
 /usr/local/cuda/include/cublas_v2.h
 cublas_api.h
@@ -492,8 +490,6 @@ cublas_api.h
 
 /usr/local/cuda/include/cuda.h
 stdlib.h
--
-stdint.h
 -
 
 /usr/local/cuda/include/cuda_device_runtime_api.h
@@ -511,8 +507,6 @@ host_config.h
 /usr/local/cuda/include/host_config.h
 builtin_types.h
 /usr/local/cuda/include/builtin_types.h
-library_types.h
-/usr/local/cuda/include/library_types.h
 channel_descriptor.h
 /usr/local/cuda/include/channel_descriptor.h
 cuda_runtime_api.h
@@ -547,10 +541,6 @@ device_functions.h
 /usr/local/cuda/include/device_functions.h
 device_launch_parameters.h
 /usr/local/cuda/include/device_launch_parameters.h
-functional
--
-utility
--
 
 /usr/local/cuda/include/cuda_runtime_api.h
 host_defines.h
@@ -653,8 +643,6 @@ sm_32_atomic_functions.h
 /usr/local/cuda/include/sm_32_atomic_functions.h
 sm_35_atomic_functions.h
 /usr/local/cuda/include/sm_35_atomic_functions.h
-sm_60_atomic_functions.h
-/usr/local/cuda/include/sm_60_atomic_functions.h
 sm_20_intrinsics.h
 /usr/local/cuda/include/sm_20_intrinsics.h
 sm_30_intrinsics.h
@@ -663,8 +651,6 @@ sm_32_intrinsics.h
 /usr/local/cuda/include/sm_32_intrinsics.h
 sm_35_intrinsics.h
 /usr/local/cuda/include/sm_35_intrinsics.h
-sm_61_intrinsics.h
-/usr/local/cuda/include/sm_61_intrinsics.h
 surface_functions.h
 /usr/local/cuda/include/surface_functions.h
 texture_fetch_functions.h
@@ -713,14 +699,8 @@ features.h
 -
 crtdefs.h
 -
-corecrt.h
--
-cstdarg
--
 
 /usr/local/cuda/include/host_defines.h
-
-/usr/local/cuda/include/library_types.h
 
 /usr/local/cuda/include/math_constants.h
 
@@ -864,39 +844,23 @@ sm_32_atomic_functions.h
 sm_32_intrinsics.h
 /usr/local/cuda/include/sm_32_intrinsics.h
 
-/usr/local/cuda/include/sm_60_atomic_functions.h
-builtin_types.h
-/usr/local/cuda/include/builtin_types.h
-host_defines.h
-/usr/local/cuda/include/host_defines.h
-sm_60_atomic_functions.hpp
-/usr/local/cuda/include/sm_60_atomic_functions.hpp
-
-/usr/local/cuda/include/sm_60_atomic_functions.hpp
-builtin_types.h
-/usr/local/cuda/include/builtin_types.h
-host_defines.h
-/usr/local/cuda/include/host_defines.h
-
-/usr/local/cuda/include/sm_61_intrinsics.h
-builtin_types.h
-/usr/local/cuda/include/builtin_types.h
-device_types.h
-/usr/local/cuda/include/device_types.h
-host_defines.h
-/usr/local/cuda/include/host_defines.h
-sm_61_intrinsics.hpp
-/usr/local/cuda/include/sm_61_intrinsics.hpp
-
-/usr/local/cuda/include/sm_61_intrinsics.hpp
-builtin_types.h
-/usr/local/cuda/include/builtin_types.h
-device_types.h
-/usr/local/cuda/include/device_types.h
-host_defines.h
-/usr/local/cuda/include/host_defines.h
-
 /usr/local/cuda/include/surface_functions.h
+builtin_types.h
+/usr/local/cuda/include/builtin_types.h
+cuda_surface_types.h
+/usr/local/cuda/include/cuda_surface_types.h
+host_defines.h
+/usr/local/cuda/include/host_defines.h
+surface_types.h
+/usr/local/cuda/include/surface_types.h
+vector_functions.h
+/usr/local/cuda/include/vector_functions.h
+vector_types.h
+/usr/local/cuda/include/vector_types.h
+surface_functions.hpp
+/usr/local/cuda/include/surface_functions.hpp
+
+/usr/local/cuda/include/surface_functions.hpp
 builtin_types.h
 /usr/local/cuda/include/builtin_types.h
 cuda_surface_types.h
@@ -911,6 +875,16 @@ vector_types.h
 /usr/local/cuda/include/vector_types.h
 
 /usr/local/cuda/include/surface_indirect_functions.h
+builtin_types.h
+/usr/local/cuda/include/builtin_types.h
+host_defines.h
+/usr/local/cuda/include/host_defines.h
+vector_functions.h
+/usr/local/cuda/include/vector_functions.h
+surface_indirect_functions.hpp
+/usr/local/cuda/include/surface_indirect_functions.hpp
+
+/usr/local/cuda/include/surface_indirect_functions.hpp
 builtin_types.h
 /usr/local/cuda/include/builtin_types.h
 host_defines.h
@@ -935,8 +909,34 @@ vector_functions.h
 /usr/local/cuda/include/vector_functions.h
 vector_types.h
 /usr/local/cuda/include/vector_types.h
+texture_fetch_functions.hpp
+/usr/local/cuda/include/texture_fetch_functions.hpp
+
+/usr/local/cuda/include/texture_fetch_functions.hpp
+builtin_types.h
+/usr/local/cuda/include/builtin_types.h
+cuda_texture_types.h
+/usr/local/cuda/include/cuda_texture_types.h
+host_defines.h
+/usr/local/cuda/include/host_defines.h
+texture_types.h
+/usr/local/cuda/include/texture_types.h
+vector_functions.h
+/usr/local/cuda/include/vector_functions.h
+vector_types.h
+/usr/local/cuda/include/vector_types.h
 
 /usr/local/cuda/include/texture_indirect_functions.h
+builtin_types.h
+/usr/local/cuda/include/builtin_types.h
+host_defines.h
+/usr/local/cuda/include/host_defines.h
+vector_functions.h
+/usr/local/cuda/include/vector_functions.h
+texture_indirect_functions.hpp
+/usr/local/cuda/include/texture_indirect_functions.hpp
+
+/usr/local/cuda/include/texture_indirect_functions.hpp
 builtin_types.h
 /usr/local/cuda/include/builtin_types.h
 host_defines.h

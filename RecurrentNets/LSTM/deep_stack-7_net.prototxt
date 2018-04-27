@@ -1,4 +1,5 @@
-name: "LSTM_stack-1-128"
+name: "LSTM_stack-1-8"
+
 
 layer {
   name: "data"
@@ -6,26 +7,27 @@ layer {
   top: "data"
   top: "label"
   data_param {
-    source: "/home/leonida/ThesisCode/NN-Roomba/SimulationEnv/Datasets/Train_inputs-10_51200-300-5-2-23-11-45-lmdb"
-    batch_size: 1024
+    source: "/home/leonida/ThesisCode/LSTM_ASCII_maps/Datasets/Train_inputs-11_102400-300-5-2-20-20-34-lmdb"
+    batch_size: 512
     backend: LMDB
   }
  
 }
 
 layer {
-	name: "Input"
-	type: "Input"
-	top:  "clip"
-	input_param {
-		shape {
-			dim: 1024
-			dim: 10  		
-		}
-	
+   name: "Input"
+   type: "Input" 
+   top:  "clip"
+   input_param {
+	shape {
+		dim: 512
+		dim: 11
 	}
 	
+   }
+	
 }
+
 
 
 layer {
@@ -35,7 +37,7 @@ layer {
   bottom: "clip"
   top: "lstm1"
   recurrent_param {
-    num_output: 128
+    num_output: 8
     weight_filler {
       type: "xavier"
     }

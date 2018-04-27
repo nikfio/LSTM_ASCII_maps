@@ -1,0 +1,4 @@
+Log file created at: 2018/03/09 15:10:58
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0309 15:10:58.262925  3362 recurrent_layer.cpp:23] Check failed: bottom[1]->num_axes() == 2 (1 vs. 2) bottom[1] must have exactly 2 axes -- (#timesteps, #streams)

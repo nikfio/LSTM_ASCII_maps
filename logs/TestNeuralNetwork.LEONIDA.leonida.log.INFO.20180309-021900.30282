@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 02:19:00
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 02:19:00.490813 30282 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 02:19:00.491008 30282 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 02:19:00.491037 30282 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:19:01.833845 30282 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.907986
+I0309 02:19:01.833912 30282 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:19:02.683639 30282 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.572681
+I0309 02:19:03.586988 30282 TrainValidateRNN.cpp:207] GPU mode
+I0309 02:19:03.587005 30282 TrainValidateRNN.cpp:213] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 02:19:03.956365 30282 accuracy_layer.cpp:31] Check failed: outer_num_ * inner_num_ == bottom[1]->count() (80 vs. 10) Number of labels must match number of predictions; e.g., if label axis == 1 and prediction shape is (N, C, H, W), label count (number of labels) must be N*H*W, with integer values in {0, 1, ..., C-1}.

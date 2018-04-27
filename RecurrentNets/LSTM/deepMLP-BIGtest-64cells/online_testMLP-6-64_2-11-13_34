@@ -1,0 +1,25 @@
+ONLINE TEST: A* PERFORMANCE: 
+ Total_paths = 50 
+ Astar_unsolved: 0 
+ Astar_total_length = 2664.478760 
+ Astar_mean_leangth = 53.289574 
+ Astar_total_time = 0.170298 
+ Astar_mean_time = 0.003406  
+  Astar_mean_nodes_expanded = 232.759995 
+ ONLINE TEST: A* PERFORMANCE comparison with net: 
+ Total_paths = 12 
+ Astar_unsolved: 0 
+ Astar_total_length = 409.546234 
+ Astar_mean_leangth = 34.128853 
+ Astar_total_time = 0.001863 
+ Astar_mean_time = 0.000155  
+  Astar_mean_nodes_expanded = 39.583332 
+ ONLINE TEST: NETWORK PERFORMANCE: MLP-6-64 
+ Total_paths = 12 
+ Net_unsolved = 38 
+ Net_total_length = 572.315918 
+ Net_mean_length = 47.692993 
+ Net_total_time = 0.006746 
+ Net_mean_time = 0.000562 
+  Net_mean_nodes_expanded = 41.583332 
+ 

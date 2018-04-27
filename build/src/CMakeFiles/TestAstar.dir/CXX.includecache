@@ -24,7 +24,7 @@ vector
 Scenario.hpp
 ../libs/Supervisor/Scenario.hpp
 
-/home/leonida/ThesisCode/LSTM_ASCII_maps/src/TestAstar.cpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/src/TestAstar.cpp
 cstdlib
 -
 string
@@ -40,7 +40,7 @@ boost/filesystem.hpp
 sstream
 -
 Scenario.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Scenario.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/src/Scenario.hpp
 Supervisor.hpp
-/home/leonida/ThesisCode/LSTM_ASCII_maps/src/Supervisor.hpp
+/home/nikfio/ThesisCode/LSTM_ASCII_maps/src/Supervisor.hpp
 

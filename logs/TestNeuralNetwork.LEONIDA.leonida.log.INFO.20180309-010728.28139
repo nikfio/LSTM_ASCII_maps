@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 01:07:28
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 01:07:28.332005 28139 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 01:07:28.332164 28139 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 01:07:28.332170 28139 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:07:29.680089 28139 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.914327
+I0309 01:07:29.680124 28139 Build_set.cpp:58] Building set... SIZE: 200
+I0309 01:07:30.527580 28139 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.569443
+I0309 01:07:31.413352 28139 TrainValidateRNN.cpp:213] GPU mode
+I0309 01:07:31.413367 28139 TrainValidateRNN.cpp:219] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 01:07:31.777283 28139 loss_layer.cpp:19] Check failed: bottom[0]->shape(0) == bottom[1]->shape(0) (10 vs. 100) The data and label should have the same first dimension.

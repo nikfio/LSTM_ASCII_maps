@@ -1,0 +1,39 @@
+Log file created at: 2018/03/09 02:15:20
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 02:15:20.505921 30095 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 02:15:20.506075 30095 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 02:15:20.506095 30095 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:15:21.842306 30095 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.905359
+I0309 02:15:21.842340 30095 Build_set.cpp:58] Building set... SIZE: 200
+I0309 02:15:22.694818 30095 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.576829
+I0309 02:15:23.584875 30095 TrainValidateRNN.cpp:207] GPU mode
+I0309 02:15:23.584892 30095 TrainValidateRNN.cpp:213] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+W0309 02:15:23.953614 30095 net.cpp:956] Unknown blob name accuracy
+I0309 02:15:23.953725 30095 TrainValidateRNN.cpp:262] Net loaded: LSTM_stack-1-8
+I0309 02:15:23.953730 30095 TrainValidateRNN.cpp:263] TRAIN INFO: batch size: 10
+I0309 02:15:23.953734 30095 TrainValidateRNN.cpp:264] Forward - backward per batch (gradients accumulated): 1
+I0309 02:15:23.953738 30095 TrainValidateRNN.cpp:265] Number of updates per batch: 1
+I0309 02:15:23.953742 30095 TrainValidateRNN.cpp:266] Unrolling for 10 timesteps
+I0309 02:15:23.953778 30095 TrainValidateRNN.cpp:327] Train: total length: 447 paths: 3 batches: 20
+I0309 02:15:23.953785 30095 TrainValidateRNN.cpp:329] Validate: total length: 291 paths: 2 batches: 20
+W0309 02:15:25.320173 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 1  ACCURACY: 0 %  MEAN LOSS: 1.94394
+W0309 02:15:26.652954 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 2  ACCURACY: 0 %  MEAN LOSS: 1.94003
+W0309 02:15:27.982841 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 3  ACCURACY: 0 %  MEAN LOSS: 1.84191
+W0309 02:15:29.304050 30095 TrainValidateRNN.cpp:501] VALIDATION TEST: 1  ACCURACY: 0 %
+W0309 02:15:30.635932 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 4  ACCURACY: 0 %  MEAN LOSS: 1.84041
+W0309 02:15:31.962321 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 5  ACCURACY: 0 %  MEAN LOSS: 1.78934
+W0309 02:15:33.289093 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 6  ACCURACY: 0 %  MEAN LOSS: 1.8784
+W0309 02:15:34.601516 30095 TrainValidateRNN.cpp:501] VALIDATION TEST: 2  ACCURACY: 0 %
+W0309 02:15:35.931277 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 7  ACCURACY: 0 %  MEAN LOSS: 1.85883
+W0309 02:15:37.302860 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 8  ACCURACY: 0 %  MEAN LOSS: 1.81996
+W0309 02:15:38.634743 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 9  ACCURACY: 0 %  MEAN LOSS: 1.81132
+W0309 02:15:39.958757 30095 TrainValidateRNN.cpp:501] VALIDATION TEST: 3  ACCURACY: 0 %
+W0309 02:15:41.292209 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 10  ACCURACY: 0 %  MEAN LOSS: 1.83075
+W0309 02:15:42.630058 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 11  ACCURACY: 0 %  MEAN LOSS: 1.78527
+W0309 02:15:43.964519 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 12  ACCURACY: 0 %  MEAN LOSS: 1.74293
+W0309 02:15:45.282749 30095 TrainValidateRNN.cpp:501] VALIDATION TEST: 4  ACCURACY: 0 %
+W0309 02:15:46.613054 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 13  ACCURACY: 0 %  MEAN LOSS: 2.11743
+W0309 02:15:47.945614 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 14  ACCURACY: 0 %  MEAN LOSS: 1.90891
+W0309 02:15:49.476826 30095 TrainValidateRNN.cpp:419] TRAIN EPOCH: 15  ACCURACY: 0 %  MEAN LOSS: 1.85908
+W0309 02:15:51.016371 30095 TrainValidateRNN.cpp:501] VALIDATION TEST: 5  ACCURACY: 0 %

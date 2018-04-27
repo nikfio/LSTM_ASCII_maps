@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 00:49:10
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 00:49:10.725077 27689 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 00:49:10.725235 27689 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 00:49:10.725241 27689 Build_set.cpp:58] Building set... SIZE: 200
+I0309 00:49:12.075592 27689 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.917018
+I0309 00:49:12.075628 27689 Build_set.cpp:58] Building set... SIZE: 200
+I0309 00:49:12.935539 27689 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.581235
+I0309 00:49:13.838122 27689 TrainValidateRNN.cpp:213] GPU mode
+I0309 00:49:13.838140 27689 TrainValidateRNN.cpp:219] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 00:49:13.844727 27689 insert_splits.cpp:29] Unknown bottom blob 'lstm1_r' (layer 'lstm2_r', bottom index 0)

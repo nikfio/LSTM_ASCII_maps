@@ -1,0 +1,13 @@
+Log file created at: 2018/03/09 18:41:33
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 18:41:33.602805  4566 TestNeuralNetwork.cpp:121]  steps tail size: 1
+I0309 18:41:34.929399  4566 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 18:41:34.929426  4566 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 18:41:35.126773  4566 TrainVal_db.cpp:78] GPU mode
+I0309 18:41:35.126791  4566 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+I0309 18:41:35.616828  4566 TrainVal_db.cpp:129] Net loaded: LSTM_stack-1-128
+I0309 18:41:35.616838  4566 TrainVal_db.cpp:130] TRAIN INFO: batch size: 128
+I0309 18:41:35.616842  4566 TrainVal_db.cpp:131] Forward - backward per batch (gradients accumulated): 1
+I0309 18:41:35.616861  4566 TrainVal_db.cpp:132] Number of updates per batch: 1
+F0309 18:41:35.617071  4566 net.cpp:686] Check failed: target_blobs[j]->shape() == source_blob->shape() Cannot share param 0 weights from layer 'lstm1'; shape mismatch.  Source param shape is 8 1 (8); target param shape is 512 1 (512)

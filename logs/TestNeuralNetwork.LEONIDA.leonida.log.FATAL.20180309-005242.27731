@@ -1,0 +1,4 @@
+Log file created at: 2018/03/09 00:52:42
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0309 00:52:42.033582 27731 accuracy_layer.cpp:25] Check failed: top_k_ <= bottom[0]->count() / bottom[1]->count() (1 vs. 0) top_k must be less than or equal to the number of classes.

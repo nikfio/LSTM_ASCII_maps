@@ -10,7 +10,7 @@
   momentum: 0.95
   display: 1
   max_iter: 100000
-  snapshot: 5000
-  snapshot_prefix: "../RecurrentNets/LSTM/deepLSTM_BIGtest-fewcells/LSTM_t100_deep-stack-2-8-2048-11_MazesRandom"
+  snapshot: 3500
+  snapshot_prefix: "../RecurrentNets/LSTM/deepLSTM-BIGGEST/LSTM_deep-stack-2-8-512-11_MazesRandom"
   solver_type: ADADELTA
   solver_mode: GPU

@@ -1,0 +1,5 @@
+Log file created at: 2018/03/09 01:31:39
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+W0309 01:31:39.282039 29117 net.cpp:956] Unknown blob name accuracy
+W0309 01:31:39.282137 29117 net.cpp:956] Unknown blob name accuracy

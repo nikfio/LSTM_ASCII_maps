@@ -1,2 +1,2 @@
-/usr/bin/ar cr libCommon_net.a  CMakeFiles/Common_net.dir/Common_net.cpp.o
+/usr/bin/ar cq libCommon_net.a  CMakeFiles/Common_net.dir/Common_net.cpp.o
 /usr/bin/ranlib libCommon_net.a

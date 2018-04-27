@@ -1,0 +1,9 @@
+Log file created at: 2018/03/09 15:10:56
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 15:10:56.758726  3362 TestNeuralNetwork.cpp:121]  steps tail size: 1
+I0309 15:10:58.076817  3362 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 15:10:58.076858  3362 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 15:10:58.253860  3362 TrainVal_db.cpp:78] GPU mode
+I0309 15:10:58.253877  3362 TrainVal_db.cpp:84] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 15:10:58.262925  3362 recurrent_layer.cpp:23] Check failed: bottom[1]->num_axes() == 2 (1 vs. 2) bottom[1] must have exactly 2 axes -- (#timesteps, #streams)

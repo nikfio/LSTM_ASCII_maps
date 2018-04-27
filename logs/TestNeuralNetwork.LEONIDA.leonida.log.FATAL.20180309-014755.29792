@@ -1,0 +1,4 @@
+Log file created at: 2018/03/09 01:47:55
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0309 01:47:55.575043 29792 layer.hpp:349] Check failed: ExactNumBottomBlobs() == bottom.size() (2 vs. 1) Accuracy Layer takes 2 bottom blob(s) as input.

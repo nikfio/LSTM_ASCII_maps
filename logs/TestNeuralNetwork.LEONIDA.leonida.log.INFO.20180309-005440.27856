@@ -1,0 +1,12 @@
+Log file created at: 2018/03/09 00:54:40
+Running on machine: LEONIDA
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0309 00:54:40.121469 27856 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
+I0309 00:54:40.121634 27856 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
+I0309 00:54:40.121642 27856 Build_set.cpp:58] Building set... SIZE: 200
+I0309 00:54:41.456813 27856 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 3 total length: 203 time needed: 0.906265
+I0309 00:54:41.456848 27856 Build_set.cpp:58] Building set... SIZE: 200
+I0309 00:54:42.304324 27856 Build_set.cpp:133] Finished Path set building: requested set size: 200 total paths: 2 total length: 202 time needed: 0.571393
+I0309 00:54:43.179603 27856 TrainValidateRNN.cpp:213] GPU mode
+I0309 00:54:43.179620 27856 TrainValidateRNN.cpp:219] ../RecurrentNets/LSTM/deep_lstm_solver.prototxt
+F0309 00:54:43.535570 27856 accuracy_layer.cpp:25] Check failed: top_k_ <= bottom[0]->count() / bottom[1]->count() (1 vs. 0) top_k must be less than or equal to the number of classes.
