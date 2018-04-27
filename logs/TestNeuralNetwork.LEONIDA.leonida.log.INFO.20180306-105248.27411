@@ -1,9 +1,0 @@
-Log file created at: 2018/03/06 10:52:48
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0306 10:52:48.145572 27411 TestNeuralNetwork.cpp:121]  steps tail size: 1
-I0306 10:52:49.443915 27411 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0306 10:52:49.443940 27411 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0306 10:52:49.625026 27411 TrainVal_db.cpp:78] GPU mode
-I0306 10:52:49.625043 27411 TrainVal_db.cpp:84] ../RecurrentNets/deep_rnn_solver.prototxt
-F0306 10:52:55.680218 27411 net.cpp:375] Top blob 'rnn1' produced by multiple sources.

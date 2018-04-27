@@ -1,7 +1,0 @@
-Log file created at: 2018/03/09 02:17:52
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0309 02:17:52.563248 30198 net.cpp:956] Unknown blob name accuracy
-W0309 02:17:53.935117 30198 TrainValidateRNN.cpp:419] TRAIN EPOCH: 1  ACCURACY: 17.5 %  MEAN LOSS: 1.9498
-W0309 02:17:55.267627 30198 TrainValidateRNN.cpp:419] TRAIN EPOCH: 2  ACCURACY: 23 %  MEAN LOSS: 1.93327
-W0309 02:17:56.599659 30198 TrainValidateRNN.cpp:419] TRAIN EPOCH: 3  ACCURACY: 23 %  MEAN LOSS: 1.84856

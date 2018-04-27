@@ -1,4 +1,0 @@
-Log file created at: 2018/03/08 09:24:14
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0308 09:24:14.267040 18637 upgrade_proto.cpp:88] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: ../RecurrentNets/deep_stack_rnn_net.prototxt

@@ -1,4 +1,0 @@
-Log file created at: 2018/03/09 02:19:03
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0309 02:19:03.956365 30282 accuracy_layer.cpp:31] Check failed: outer_num_ * inner_num_ == bottom[1]->count() (80 vs. 10) Number of labels must match number of predictions; e.g., if label axis == 1 and prediction shape is (N, C, H, W), label count (number of labels) must be N*H*W, with integer values in {0, 1, ..., C-1}.

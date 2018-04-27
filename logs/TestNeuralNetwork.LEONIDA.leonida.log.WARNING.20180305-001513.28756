@@ -1,6 +1,0 @@
-Log file created at: 2018/03/05 00:15:13
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0305 00:15:13.469307 28756 TrainVal_db.cpp:267] TRAIN EPOCH: 1  ACCURACY: 28.367 %  MEAN LOSS: 1.87445
-W0305 00:15:16.177430 28756 TrainVal_db.cpp:267] TRAIN EPOCH: 2  ACCURACY: 34.7669 %  MEAN LOSS: 1.72429
-W0305 00:15:18.854984 28756 TrainVal_db.cpp:267] TRAIN EPOCH: 3  ACCURACY: 38.9917 %  MEAN LOSS: 1.65399

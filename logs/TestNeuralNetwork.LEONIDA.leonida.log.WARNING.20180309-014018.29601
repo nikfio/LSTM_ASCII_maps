@@ -1,6 +1,0 @@
-Log file created at: 2018/03/09 01:40:18
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-W0309 01:40:18.264679 29601 net.cpp:956] Unknown blob name accuracy
-W0309 01:40:18.264761 29601 net.cpp:956] Unknown blob name accuracy
-F0309 01:40:28.328871 29601 net.cpp:686] Check failed: target_blobs[j]->shape() == source_blob->shape() Cannot share param 0 weights from layer 'out'; shape mismatch.  Source param shape is 8 8 (64); target param shape is 8 80 (640)

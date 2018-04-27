@@ -1,8 +1,0 @@
-Log file created at: 2018/03/06 10:44:47
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0306 10:44:47.606159 27333 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0306 10:44:47.606325 27333 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0306 10:44:47.798064 27333 TrainVal_db.cpp:78] GPU mode
-I0306 10:44:47.798081 27333 TrainVal_db.cpp:84] ../RecurrentNets/deep_rnn_solver.prototxt
-F0306 10:45:00.832311 27333 cudnn_tanh_layer.cpp:13] Check failed: status == CUDNN_STATUS_SUCCESS (4 vs. 0)  CUDNN_STATUS_INTERNAL_ERROR

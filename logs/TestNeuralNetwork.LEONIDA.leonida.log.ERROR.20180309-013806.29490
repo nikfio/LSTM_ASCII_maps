@@ -1,4 +1,0 @@
-Log file created at: 2018/03/09 01:38:06
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0309 01:38:06.710671 29490 TrainValidateRNN.cpp:247] Check failed: sequence_length == blobData->shape(1) (10 vs. 1) train net: seq_size and data shape(1) must be equal

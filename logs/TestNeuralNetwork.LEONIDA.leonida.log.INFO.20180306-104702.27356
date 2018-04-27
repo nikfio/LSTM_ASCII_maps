@@ -1,8 +1,0 @@
-Log file created at: 2018/03/06 10:47:02
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0306 10:47:02.684487 27356 TestNeuralNetwork.cpp:243] Allowed DIAGONAL directions
-I0306 10:47:02.684660 27356 TestNeuralNetwork.cpp:251] Paths composing datasets will have maximum 300 steps
-I0306 10:47:02.863236 27356 TrainVal_db.cpp:78] GPU mode
-I0306 10:47:02.863253 27356 TrainVal_db.cpp:84] ../RecurrentNets/deep_rnn_solver.prototxt
-F0306 10:47:02.869953 27356 solver.cpp:431] Cannot write to snapshot prefix '../RecurrentNets/deepRNN_BIGtest_4cells/RNN_stack_2-4'.  Make sure that the directory exists and is writeable.

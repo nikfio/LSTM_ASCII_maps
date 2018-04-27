@@ -1,4 +1,0 @@
-Log file created at: 2018/03/10 03:26:50
-Running on machine: LEONIDA
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F0310 03:26:50.915982 16677 solver.cpp:431] Cannot write to snapshot prefix '../RecurrentNets/LSTM/deepLSTM_BIGGEST/LSTM_deep-stack-2-8-512-11_MazesRandom'.  Make sure that the directory exists and is writeable.
