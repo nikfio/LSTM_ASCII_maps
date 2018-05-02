@@ -1,104 +1,59 @@
-/* A-star algorithm to search the optimal path planning
-   this can be used as supervisor to train the network
-
+/* 
+	base class for a global planner
 */
 
-/* Here is defined the header file of A-star algorithm */
 
-#ifndef ASTAR_H
-#define ASTAR_H
+#ifndef SEARCH_AGENT_H
+#define SEARCH_AGENT_H
 
-
-#include <iostream>
-#include <vector>
-
-#define MAX_LENGTH 1000
-
-using namespace std;
 
 #include "Scenario.hpp"
 
-using namespace PathPlanning;
 
-namespace Supervisor
+namespace GlobalPlanning
 {
 
+using CoordinateList = std::vector< pixel >;
 
-using uint = unsigned int;
-using HeuristicFunction = std::function<uint(Pixel, Pixel)>;
-using CoordinateList = std::vector<Pixel>;
-using NodeSet = std::vector<Node*>;
-
-struct Node 
+class SearchAgent
 {
-	double G, H;
-	int x,y;
-	char sym;	
-	Node *parent;
-
-	double getAstarScore();
-	Node();	
-
-	Node(Pixel pix);
-	Node(Pixel coord_, Node* parent_);
-	const Node operator = (const Node& equival);
-	bool operator == (const Node& curr);
+	public:
+	SearchAgent(char agent_char);
 	
-};
+	SearchAgent(char agent_char, 
+				std::vector<string>& string_list, 
+				std::string& direction_mode); 
 
-class Astar
-{	
- public:
-	void setHeuristic(HeuristicFunction heuristic_);
-	Astar(string& direction_mode);
-	Astar(Scenario& scenario, string& direction_mode);
+	SearchAgent(char agent_char,
+				std::vector<string>& string_list, 
+				std::string& direction_mode, 
+				int scenarios_number);
 
-	void setHeuristic(string new_heuristic);
+	void setDirections(std::string& allowed);
+
+	virtual CoordinateList GetPath(const int map_index,
+									const int par_index,
+									float& path_cost,
+									double& elapsed_time,
+									int& nodes_exp ) const  = 0;
+
+	virtual CoordinateList GetPath(Map& map,
+									const pixel& start, 
+									const pixel& goal,
+									float& path_cost,
+									double& elapsed_time,
+									int& nodes_exp ) const = 0;
+
+	inline const char getSym() const { return symbol; }
+
+	private:
+	vector< pixel > directions;
+	ScenarioList scenarios;
+	char symbol;
 	
-	float ComputeHeuristic(Pixel source, Pixel target);
-	int getDirectionSize();
-	float CalculateCost(CoordinateList& Path);
-	
-	int find_index(NodeSet& nodes, Node* curr);
-	Node* findNodeOnList(NodeSet& nodes, Pixel& coordinates);
-	int search_path(float& PathCost, CoordinateList& Path, int& index, double& elapsed_time, int& nodes_exp);
-	int search_path(float& PathCost, CoordinateList& Path, Pixel& source_, Pixel& target_, int& nodes_exp);
-
-	// function to search path in a scenario parameters not initially contained in .map.scen
-	int search_extra_path(float& PathCost, CoordinateList& Path, Pixel& source_, Pixel& target_, int& nodex_exp);
-	
-
-	void releaseNodes(NodeSet& nodes);
-protected:
-	Scenario scenario;
-	CoordinateList direction;
-	string HeuristicMethod;
-};
-
-Pixel getDelta(Pixel source, Pixel target);
-
-float euclidean(Pixel source, Pixel target);
-
-void setDirections(vector<Pixel>& direction, string& mode);
-
-bool OutOfBounds(Map& map, Pixel& next);
-
-bool detectCollision(Node* newNode);
-
-bool detectCollision(Node& newNode);
-
-int find_node_coord(int map_x, int map_y, CoordinateList& Path);
-
-float CalculateCost(CoordinateList& Path, string& direction_mode);
-
-void PrintPath(CoordinateList& PathFound, Scenario& scenario, string& filename);
-
-void PrintPath(CoordinateList& PathFound, Scenario& scenario, string& filename, char symbol);
-
-void PrintPath(CoordinateList& PathFound, Map& map, string& filename, char symbol);
-
-bool findPixel(int x, int y, LocalMap& occ);
-
 }
+
+
+}  // namespace GlobalPlanning
 
 #endif
