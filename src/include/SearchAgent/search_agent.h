@@ -31,18 +31,20 @@ class SearchAgent
 
 	void setDirections(std::string& allowed);
 
-	virtual CoordinateList GetPath(const int map_index,
-									const int par_index,
-									float& path_cost,
-									double& elapsed_time,
-									int& nodes_exp ) const  = 0;
+	virtual const int GetPath(const int map_index,
+						const int par_index,
+					    CoordinateList& PathFound,
+						float& path_cost,
+						double& elapsed_time,
+						int& nodes_exp ) const  = 0;
 
-	virtual CoordinateList GetPath(Map& map,
-									const pixel& start, 
-									const pixel& goal,
-									float& path_cost,
-									double& elapsed_time,
-									int& nodes_exp ) const = 0;
+	virtual const int GetPath(Map& map,
+						const pixel& start, 
+						const pixel& goal,
+						CoordinateList& PathFound,
+						float& path_cost,
+						double& elapsed_time,
+						int& nodes_exp ) const = 0;
 
 	inline const char getSym() const { return symbol; }
 

@@ -6,6 +6,7 @@
 #ifndef SCENARIO_H
 #define SCENARIO_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 
@@ -15,12 +16,17 @@ namespace GlobalPlanning
 
 using pixel = std::<int,int>;
 
+std::ostream& operator <<(std::ostream outs, const pixel point);
+
 // .map.scen single scenario parameters 
-struct Scenario_par {
+struct scenario_param {
 	pixel start;
 	pixel goal;
 	float optimal;
+
+	std::ostream& operator <<(std::ostream, const scenario_param param);
 };
+
 
 /*
 	base class to handle the map
@@ -72,17 +78,17 @@ class Scenario
 	inline std::string getScenarioName() { return scen_name; }
 	inline std::string getMapName() { return map_name; }
 	inline Map& getMap() { return scenario_map; }
-	inline int getSize() { return scenario_vect.size(); }
+	inline int getSize() { return param_vect.size(); }
 	inline float getOptimal(const uint index) { return scenario_vect[index].optimal; }
-	inline pixel getSource(const int index) { return scenario_vect[index].start; }
-	inline pixel getTarget(const int index) { return scenario_vect[index].goal; }
-	inline Scenario_par& getScenario_par(const int index) { return scenario_vect[index]; }
+	inline pixel getStart(const int index) { return scenario_vect[index].start; }
+	inline pixel getGoal(const int index) { return scenario_vect[index].goal; }
+	inline scenario_param& getParam(const int index) { return scenario_vect[index]; }
 
 	private:
 	std::string scen_name;
 	std::string map_name;
 	Map scenario_map;
-	std::vector<Scenario_par> scenario_vect;
+	std::vector<scenario_param> param_vect;
 
 }; 
 
@@ -100,6 +106,7 @@ class ScenarioList
 	ScenarioList(std::vector<string>& string_list, int scenarios_number);
 		
 	inline int getSize() { return scenario_archive.size(); }
+	inline const Scenario& getScenario(const int index) { return scenario_archive[i]; }
 		
 	private
 	std::vector<Scenario> scenario_archive;

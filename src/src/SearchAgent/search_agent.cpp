@@ -41,9 +41,8 @@ namespace GlobalPlanning
 
 	SearchAgent::SearchAgent(char agent_char, 
 							 std::vector<string>& string_list, 
-							 std::string& allowed) {
+							 std::string& allowed) : symbol(agent_char)  {
 
-		symbol = agent_char;
 		setDirections(allowed);
 		scenarios = ScenarioList(string_list);
 	
@@ -52,9 +51,8 @@ namespace GlobalPlanning
 	SearchAgent::SearchAgent(char agent_char, 
 							 std::vector<string>& string_list, 
 							 std::string& allowed, 
-							 int scenarios_number) {
+							 int scenarios_number) : symbol(agent_char) {
 
-		symbol = agent_char;
 		setDirections(allowed);
 		scenarios = ScenarioList(string_list, scenarios_number);
 		

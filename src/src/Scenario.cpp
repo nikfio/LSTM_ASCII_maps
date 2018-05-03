@@ -17,9 +17,27 @@ using std::vector;
 
 namespace GlobalPlanning {
 
+	std::ostream& operator <<(std::ostream outs, const pixel point) {
+	
+		outs << "(" << point.first << "," << point.second << ")";
 
-	Map::Map() {
-		width = length = 0;
+		return outs;
+	
+	};
+	
+	scenario_param::std::ostream& operator <<(std::ostream outs, const scenario_param param) {
+		
+		outs << "Start: " << param.start 
+             <<	" Goal: " << param.goal
+			 << " Optimal: " << param.optimal;
+		
+		return outs;
+
+	};
+
+	Map::Map() : width(0), height(0) 
+	{
+		// deliberately empty
 	};
 
 	void Map::TextToMap(const string& map_name) {
@@ -28,7 +46,6 @@ namespace GlobalPlanning {
 		temp.open(map_name.c_str());
 		if( temp.fail() ) {
 			LOG(FATAL) << "MapToNodes: Map file opening failed.\n";
-			exit(1);
 		}
 	
 		temp.ignore(INT_MAX, '\n');
@@ -70,7 +87,7 @@ namespace GlobalPlanning {
 
 		for(int j=0; j < height; j++) {
 			for(int i=0; i < width; i++) {
-				temp << coord[i];
+				temp << coord[j * height + i];
 			}
 			temp << std::endl;
 		}
@@ -102,12 +119,12 @@ namespace GlobalPlanning {
 			for(int i=0; i < width; i++) {
 				if (i==point.first && j==point.second) {
 					if(mod) {
-						coord[height * point.second + point.first];
+						coord[point.second * height + point.first] = symbol;
 					}
 					temp << symbol;
 				}
 				else {
-					temp << coord[i];
+					temp coord[j * height + i];
 				}
 			}
 		
@@ -123,7 +140,7 @@ namespace GlobalPlanning {
 
 		CHECK_LT(point.first, map.width) << "Point desired to modify not in map: x invalid";
 		CHECK_LT(point.second, map.height) << "Point desired to modify not in map: y invalid";
-		coord[map.width * point.second + point.first] = symbol;
+		coord[point.second * map.width + point.first] = symbol;
 
 	}
 
@@ -140,7 +157,7 @@ namespace GlobalPlanning {
 			LOG(FATAL) << "Scenario file opening failed";
 		}
 	
-		Scenario_par temp_par;
+		scenario_param temp_par;
 		
 		temp.ignore(INT_MAX, '\n');
 		string parameters_line; 
@@ -169,7 +186,7 @@ namespace GlobalPlanning {
 			ss.ignore(INT_MAX, ' ');
 			ss >> temp_par.optimal;
 
-			scenario_vect.push_back(temp_par);
+			param_vect.push_back(temp_par);
 
 		}
 		
@@ -200,7 +217,7 @@ namespace GlobalPlanning {
 			LOG(FATAL) << "Scenario file opening failed";
 		}
 	
-		Scenario_par temp_par;
+		scenario_param temp_par;
 		
 		temp.ignore(INT_MAX, '\n');
 		string parameters_line; 
@@ -228,7 +245,7 @@ namespace GlobalPlanning {
 			ss.ignore(INT_MAX, ' ');
 			ss >> temp_par.optimal;
 
-			scenario_vect.push_back(temp_par);
+			param_vect.push_back(temp_par);
 			line++;
 
 		}
