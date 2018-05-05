@@ -58,6 +58,31 @@ namespace GlobalPlanning
 		
 	};
 
+	float Astar::CalculateCost(CoordinateList& Path) {
+
+		float cost = 0;
+		pixel temp();
+	
+		for(int i=0; i<Path.size()-1; i++) {
+			temp = Path[i+1] - Path[i];
+			for(int j=0; j < direction.size(); j++) {
+				   if(temp == direction[j]) {
+				   dir = j;
+				   break;
+				}
+			}
+			if ( dir < 4 ) {
+				cost += std::get<0>(scale_param);
+			}
+			else if( dir >= 4 ) {
+				cost += std::get<1>(scale_param);
+			}
+			
+		}
+
+		return cost;
+
+	};
 	
 
 }// end of Supervisor namespace implementation

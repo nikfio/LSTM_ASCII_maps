@@ -32,21 +32,22 @@ class SearchAgent
 	void setDirections(std::string& allowed);
 
 	virtual const int GetPath(const int map_index,
-						const int par_index,
-					    CoordinateList& PathFound,
-						float& path_cost,
-						double& elapsed_time,
-						int& nodes_exp ) const  = 0;
+							  const int par_index,
+					    	  CoordinateList& PathFound,
+							  float& path_cost,
+							  double& elapsed_time,
+							  int& nodes_exp ) = 0;
 
 	virtual const int GetPath(Map& map,
-						const pixel& start, 
-						const pixel& goal,
-						CoordinateList& PathFound,
-						float& path_cost,
-						double& elapsed_time,
-						int& nodes_exp ) const = 0;
+							  const pixel& start, 
+							  const pixel& goal,
+							  CoordinateList& PathFound,
+							  float& path_cost,
+							  double& elapsed_time,
+							  int& nodes_exp ) = 0;
 
 	inline const char getSym() const { return symbol; }
+	inline const int getDirectionSize() const { return directions.size() }
 
 	private:
 	vector< pixel > directions;

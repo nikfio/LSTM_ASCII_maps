@@ -16,7 +16,9 @@ namespace GlobalPlanning
 
 using pixel = std::<int,int>;
 
-std::ostream& operator <<(std::ostream outs, const pixel point);
+std::ostream& operator <<(std::ostream outs, const pixel& point);
+const pixel& operator +(const pixel& left, const pixel& right);
+const pixel& operator -(const pixel& left, const pixel& right);
 
 // .map.scen single scenario parameters 
 struct scenario_param {
@@ -40,11 +42,12 @@ class Map
 	void TextToMap(string& map_name);
 	inline int getHeight() { return height; };
 	inline int getWidth() { return width; };
-	
-	void printMap(string& filename);
+
+	friend bool OutOfBounds(const Map& map, const pixel& point);
+	friend bool DetectCollision(const Map& map, const pixel& point);
 
 	void mod_map_point(const pixel& point, const char symbol);
-
+	void printMap(string& filename);
 	void printMap_point(const pixel& point, 
 						const string& filename,
 						const char symbol,

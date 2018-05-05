@@ -24,6 +24,18 @@ namespace GlobalPlanning {
 		return outs;
 	
 	};
+
+	const pixel& operator +(const pixel& left, const pixel& right) {
+
+		return pixel(left.first + right.first, left.second + right.second);
+
+	}
+
+	const pixel& operator -(const pixel& left, const pixel& right) {
+
+		return pixel(left.first - right.first, left.second - right.second);
+
+	}
 	
 	scenario_param::std::ostream& operator <<(std::ostream outs, const scenario_param param) {
 		
@@ -45,7 +57,7 @@ namespace GlobalPlanning {
 		std::ifstream temp;
 		temp.open(map_name.c_str());
 		if( temp.fail() ) {
-			LOG(FATAL) << "MapToNodes: Map file opening failed.\n";
+			LOG(FATAL) << "TextToMap: Map file opening failed.\n";
 		}
 	
 		temp.ignore(INT_MAX, '\n');
@@ -61,8 +73,8 @@ namespace GlobalPlanning {
 	
 		for(int j = 0; j < height; j++) {
 
-				getline(temp, temp_line);
-				coord.append(temp_line);	
+			getline(temp, temp_line);
+			coord.append(temp_line);	
 
 		}
 	
@@ -72,6 +84,28 @@ namespace GlobalPlanning {
 
 	};
 
+	bool OutOfBounds(const Map& map, const pixel& point) {
+
+		if ( point.first < 0 || point.first > map.width || 
+			 point.second < 0 || point.second > map.height ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+	};
+
+	bool DetectCollision(const Map& map, const pixel& point) {
+	
+		if ( map.coord[point.second * map.height + point.first] != '.' ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+
+	};
 
 	void Map::printMap(const string& new_file) const {
 	
@@ -102,9 +136,11 @@ namespace GlobalPlanning {
 							 const char symbol,
 							 const bool mod) {
 
-		CHECK_LT(point.first, width) << "Point specified not in map: x invalid";
-		CHECK_LT(point.second, height) << "Point specified not in map: y invalid";
-	
+		CHECK_LT(point.first, width) << "Print Point specified not in map: x invalid";
+		CHECK_LT(point.second, height) << "Print Point specified not in map: y invalid";
+		CHECK_GE(point.first, 0) << "Print Point specified not in map: x negative";
+		CHECK_GE(point.second, 0) << "Print Point specified not in map: y negative";
+
 		std::ofstream temp;
 		temp.open(filename.c_str());
 		if( temp.fail() ) {
@@ -138,8 +174,11 @@ namespace GlobalPlanning {
 
 	void Map::mod_map_point(Map& map, const pixel& point, const char symbol) {
 
-		CHECK_LT(point.first, map.width) << "Point desired to modify not in map: x invalid";
-		CHECK_LT(point.second, map.height) << "Point desired to modify not in map: y invalid";
+		CHECK_LT(point.first, width) << "Mod Point specified not in map: x invalid";
+		CHECK_LT(point.second, height) << "Mod Point specified not in map: y invalid";
+		CHECK_GE(point.first, 0) << "Mod Point specified not in map: x negative";
+		CHECK_GE(point.second, 0) << "Mod Point specified not in map: y negative";
+
 		coord[point.second * map.width + point.first] = symbol;
 
 	}

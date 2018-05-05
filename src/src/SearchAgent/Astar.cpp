@@ -7,6 +7,8 @@
 #include <Astar.h>
 
 
+DECLARE_int32(timeout);
+
 namespace GlobalPlanning {
 
 	AstarNode::AstarNode()
@@ -33,7 +35,7 @@ namespace GlobalPlanning {
 		return G + H;
 	};
 
-	friend AstarNode AstarNode::operator = (const AstarNode& equal)
+	AstarNode AstarNode::operator = (const AstarNode& equal)
 	{
 		point = equal.point;
 		G = equal.G;
@@ -41,14 +43,39 @@ namespace GlobalPlanning {
 		parent = equal.parent;
 	};
 
-	friend const bool AstarNode::operator == (const AstarNode& curr)
+	const bool AstarNode::operator == (const AstarNode& curr)
 	{
 		if( pix==curr.pix && G==curr.G && H==curr.H && parent==curr.parent)
 			return true;
 		else
 			return false;
+	};
 
+	const pixel& getDelta(const pixel& current, const pixel& goal)
+	{
+		return pixel( abs(source.x - target.x),  abs(source.y - target.y) );
+	};
+
+
+	const float manhattan(const pixel& current, const pixel& target, const cost_scale& scale_param)
+	{
+		pixel delta = getDelta(source, target));
+		return static_cast<float>(std::get<2>(scale_param) * (std::get<0>(scale_param) * (delta.first + delta.second)));
+	};
+
+	const float octile(const pixel& current, const pixel& target, const cost_scale& scale_param) 
+	{
+		pixel delta = getDelta(source, target));
+		float cartesian_moves = std::get<0>(scale_param) * (delta.first + delta.second);
+		float save_diagonal_moves = (std::get<1>(scale_param) - 2*std::get<0>(scale_param)) * std::min(delta.first, delta.second);
+		return static_cast<float>(std::get<2>(scale_param) * ( cartesian_moves + save_diagonal_moves );
 	}
+
+	const float euclidean(const pixel& current, const pixel& goal, const cost_scale& scale_param)
+	{
+		pixel delta = getDelta(source, target));
+		return static_cast<float>( std::get<2>(scale_param) * sqrt(pow(delta.first, 2) + pow(delta.first, 2)) );
+	};
 
 	void Astar::setHeuristic(std::string& method) {
 
@@ -71,10 +98,10 @@ namespace GlobalPlanning {
 	Astar::Astar(char agent_char, 
 		  		 std::vector<string>& string_list, 
 		  		 std::string& direction_mode,
-		  		 std::tuple<float,float,float> cost_scale,
+		  		 const cost_scale scale_param,
 		  		 std::string& heuristic_func) 
 				: SearchAgent(agent_char, string_list, direction_mode), 
-					cost_scale(cost_scale)
+				  scale_param(scale_param)
 	{
 		setHeuristic(heuristic_func);
 	};
@@ -83,10 +110,10 @@ namespace GlobalPlanning {
 		  		 std::vector<string>& string_list, 
 		  		 std::string& direction_mode,
 		  		 int scenarios_number,
-		  		 std::tuple<float,float,float> cost_scale,
+		  		 cost_scale scale_param,
 		  		 std::string& heuristic_func) 
 				: SearchAgent(agent_char, string_list, direction_mode, scenarios_number), 
-					cost_scale(cost_scale)
+					scale_param(scale_param)
 	{
 		setHeuristic(heuristic_func);
 	};
@@ -95,14 +122,23 @@ namespace GlobalPlanning {
 	int  Astar::find_index(AstarNodeSet& set, AstarNode* curr) {
 
 	for (int i = 0; i < set.size(); i++) {
-		    if (set[i] == curr) {
-		        return i;
+		if (set[i] == curr) {
+			break;
+		}
+	}
+
+	return i;	
+	
+	};
+
+	AstarNode* Astar::findNodeInSet(AstarNodeSet& set, pixel& point_check)
+	{
+		for (int i =0; i<AstarNodes.size(); i++) {
+		    if (AstarNodes[i]->point == point_check) {
+		        return AstarNodes[i];
 		    }
 		}
-		if(i==AstarNodes.size()) {
-		return i;
-		}
-
+		return nullptr;
 	};
 
 	const int GetPath(const int map_index,
@@ -143,13 +179,14 @@ namespace GlobalPlanning {
 
 		path_cost = nodes_exp = 0;
 		
+		float totalCost = 0;
 		double start = getTime();
 		while (!openSet.empty()) {
 		
-			current = openSet.front(); int i;
-			for(i=0; i<openSet.size(); i++)   {
-				if (openSet[i]->getAstarScore() < current->getAstarScore()) {
-				    current = openSet[i];
+			current = openSet.front();
+			for(int i=0; i < OpenSet.size(); i++)   {
+				if (openSet[i]->getAstarScore() < current->getScore()) {
+				    current = OpenSet[i];
 				}
 			}
 		
@@ -170,62 +207,58 @@ namespace GlobalPlanning {
 						<< current->point;
 			}
 
-			nodes_exp++;
-
+			if( nodes_exp++ > timeout )
+				break;
+		
 			for (int i = 0; i < direction.size(); i++) {
-		        pixel touch_point(current->pix + direction[i]);
+		        pixel touch_point(current->point + directions[i]);
 			
 				if ( OutOfBounds(map, touch_point) ) {
-					VLOG(1) << "Agent on map extreme bounds";
+					VLOG(2) << "Agent exceeded map extreme bounds";
 					continue;
-				}
+				}			
 
-				AstarNode *newAstarNode = &PathMap.coord[newCoordinates.x][newCoordinates.y];
-			
-
-		       	if ( detectCollision(newAstarNode) ) {
-					//cout << "Collision DETECTED\n";
+		       	if ( DetectCollision(map, touch_point) ) {
+					VLOG(2) << "Collision DETECTED\n";
 					continue;
-		        	}
+		        }
 			
-			
-			
-				if ( findAstarNodeOnList(closedSet, newCoordinates) ) {
+				if ( findNodeInSet(ClosedSet, touch_point) ) {
 					continue;
 				}
 			
-				if ( direction.size() == 8 ) {
+				if ( directions.size() == 8 ) {
 					if( i < 4 ) {
-						totalCost = current->G + std::get<0>(cost_scale);
+						totalCost = current->G + std::get<0>(scale_param);
 					}
 					else if ( i >= 4 ) 
 					{
-						totalCost = current->G + std::get<1>(cost_scale);
+						totalCost = current->G + std::get<1>(scale_param);
 					}
 				}
-				else if ( direction.size() == 4 ) {
-					totalCost = current->G + std::get<0>(cost_scale);
+				else if ( directions.size() == 4 ) {
+					totalCost = current->G + std::get<0>(scale_param);
 				}
 
-				successor = findAstarNodeOnList(openSet, newCoordinates);
+				successor = findNodeInSet(OpenSet, touch_point);
 				if (successor == nullptr ) {
-					successor = new AstarNode(newCoordinates, current);		
+					successor = new AstarNode(touch_point, current);		
 					successor->G = totalCost;
-					successor->H = ComputeHeuristic(successor->pix, target);
-					openSet.push_back(successor);	
-				
+					successor->H = heuristic(successor->point, goal);
+					OpenSet.push_back(successor);		
 				}
-					else if (totalCost < successor->G) {
+				else if (totalCost < successor->G) {
 					successor->parent = current;
 					successor->G = totalCost;
-					successor->H = ComputeHeuristic(successor->pix, target);
-		        	}
+					successor->H = heuristic(successor->point, goal);
+		        }
 			
 			}	
 
 		
 		}
 		double end = getTime();	
+		elapsed_time = end - start;	
 
 		if(!empty(PathFound))
 			PathFound.clear();
@@ -234,288 +267,173 @@ namespace GlobalPlanning {
 		   	PathFound.push_back(current->pix);
 		   	current = current->parent;
 		}
-
-		elapsed_time = end - start;	
 	
 		reverse(PathFound.begin(), PathFound.end());
 	
-		if(failed || Path.back() != target ) 
-			return 0;
+		path_cost = CalculateCost(PathFound);
+			
+		delete start_node;
+		OpenSet.clear();
+		ClosedSet.clar();
 
-		PathCost = CalculateCost(Path);
-
-		if( VLOG_IS_ON(2) ) {
-			string test_file = "last_test";
+		if( VLOG_IS_ON(2) ) {_
+			string test_file = "test";
 			PrintPath(Path, scenario, test_file);
 		}
-
-		delete start_node;
 		
-		LOG(INFO) << "Comparison:    " <<    "Agent A star cost: " << totalCost 
-			 << "		Calculation method cost: " << PathCost << endl;
-	
-		if (totalCost < MAX_LENGTH && PathCost < MAX_LENGTH ) {		
+		
+		if(PathFound.back() != goal ) 
+			return 0;
+		else {
+			VLOG(1) << "Agent A star cost: " << path_cost 
+			        << "	Optimal: " << scenario.getOptimal(par_index) << endl;
 			return 1;
 		}
-		else {			
-			return 0;
-		}
-	
+
 	};
 
 
-int Astar::search_path(float& PathCost, CoordinateList& Path, pixel& source_, pixel& target_, int& AstarNodes_exp) {
-	
-	if( scenario.getSize() == 0 ) {
-		cerr << "No scenarios loaded\n";
-	}
-	
-	Map PathMap = scenario.getMap();
-	
-	#ifdef DEBUG_LEV_1
-        cout << "Agent Astar called for scenario" << scenario.getScenarioName() 
-	     << endl << "Map " << scenario.getMapName() << endl;
-	cout << "Goal :" << target_ << endl;
-	cout << "Source :" << source_ << endl;
-	#endif
-
-	AstarNode *current;
-    	AstarNodeSet openSet, closedSet;
-	AstarNode *SourceAstarNode = new AstarNode(source_);
-    	openSet.push_back(SourceAstarNode);
-	AstarNode *successor; 
-
-	float totalCost = 0;
-
-	AstarNodes_exp = 0;
-	while (!openSet.empty()) {
+	const int GetPath(Map& map,
+					  const pixel& start, 
+					  const pixel& goal,
+					  CoordinateList& PathFound,
+					  float& path_cost,
+					  double& elapsed_time,
+					  int& nodes_exp ) 
+	{
 		
-		current = openSet.front(); int i;
-		for(i=0; i<openSet.size(); i++)   {
-		    if (openSet[i]->getAstarScore() < current->getAstarScore()) {
-		        current = openSet[i];
-		    }
+	
+		VLOG(1) << "Agent Astar called for Map: " << scenario.getMapName() << std::endl
+		 		<< "Scenario parameters index: " << par_index << std::endl;
+				<< "Goal :" << target << std::endl;
+		 		<< "Source :" << source << std::endl;
+				<< "Optimal length supposed " << scenario.getOptimal(par_index);
+
+		if(!empty(OpenSet))
+			OpenSet.clear();
+	
+		if(!empty(ClosedSet))
+			ClosedSet.clear();
+		
+		AstarNode *current, *successor;
+		AstarNode *start_node = new AstarNode(start);
+		OpenSet.push_back(start_node);
+
+		path_cost = nodes_exp = 0;
+		
+		float totalCost = 0;
+		double start = getTime();
+		while (!openSet.empty()) {
+		
+			current = openSet.front();
+			for(int i=0; i < OpenSet.size(); i++)   {
+				if (openSet[i]->getAstarScore() < current->getScore()) {
+				    current = OpenSet[i];
+				}
+			}
+		
+			if (current->point == goal) {
+				LOG(INFO) << "GOAL FOUND";
+				break;
+			}
+		
+			ClosedSet.push_back(current); 
+			if( find_index(openSet, current) < openSet.size() ) {
+				VLOG(2) << "erasing AstarNode in OpenSet: "
+						<< current->point;
+	
+		    	OpenSet.erase(openSet.begin() + find_index(openSet, current));
+			}
+			else {
+				VLOG(2) << "Current AstarNode is not on OPEN list: "
+						<< current->point;
+			}
+
+			if( nodes_exp++ > timeout )
+				break;
+		
+			for (int i = 0; i < direction.size(); i++) {
+		        pixel touch_point(current->point + directions[i]);
+			
+				if ( OutOfBounds(map, touch_point) ) {
+					VLOG(2) << "Agent on map extreme bounds";
+					continue;
+				}			
+
+		       	if ( DetectCollision(map, touch_point) ) {
+					VLOG(2) << "Collision DETECTED\n";
+					continue;
+		        }
+			
+				if ( findNodeInSet(ClosedSet, touch_point) ) {
+					continue;
+				}
+			
+				if ( directions.size() == 8 ) {
+					if( i < 4 ) {
+						totalCost = current->G + std::get<0>(scale_param);
+					}
+					else if ( i >= 4 ) 
+					{
+						totalCost = current->G + std::get<1>(scale_param);
+					}
+				}
+				else if ( directions.size() == 4 ) {
+					totalCost = current->G + std::get<0>(scale_param);
+				}
+
+				successor = findNodeInSet(OpenSet, touch_point);
+				if (successor == nullptr ) {
+					successor = new AstarNode(touch_point, current);		
+					successor->G = totalCost;
+					successor->H = heuristic(successor->point, goal);
+					OpenSet.push_back(successor);		
+				}
+				else if (totalCost < successor->G) {
+					successor->parent = current;
+					successor->G = totalCost;
+					successor->H = heuristic(successor->point, goal);
+		        }
+			
+			}	
+
+		
+		}
+		double end = getTime();	
+		elapsed_time = end - start;	
+
+		if(!empty(PathFound))
+			PathFound.clear();
+		
+		while (current != nullptr) {
+		   	PathFound.push_back(current->pix);
+		   	current = current->parent;
+		}
+	
+		reverse(PathFound.begin(), PathFound.end());
+
+		path_cost = CalculateCost(PathFound);
+		
+		delete start_node;
+		OpenSet.clear();
+		ClosedSet.clar();
+
+		if( VLOG_IS_ON(2) ) {_
+			string test_file = "test";
+			PrintPath(Path, scenario, test_file);
 		}
 		
-		if (current->pix == target_ ) {
-		    #ifdef DEBUG_LEV_1
-		    cout << "GOAL AstarNode FOUND  "  << endl;
-		    #endif
-		    break;
-		}
-		
-		closedSet.push_back(current); 
-		if( find_index(openSet, current) < openSet.size() ) {
-			//cout << "erasing AstarNode in openSet: "<< current.pix.x << ","<< current.pix.y <<endl;		
-        		openSet.erase(openSet.begin() + find_index(openSet, current));
-		}
+		if(PathFound.back() != goal ) 
+			return 0;
 		else {
-			//cout << "Current AstarNode is not on OPEN list \n";
+			VLOG(1) << "Agent A star cost: " << path_cost 
+			        << "	Optimal: " << scenario.getOptimal(par_index) << endl;
+			return 1;
 		}
 
-		AstarNodes_exp++;
+	};
 
-		for (int i = 0; i < direction.size(); i++) {
-                	pixel newCoordinates(current->pix + direction[i]);
-			
-			if ( OutOfBounds(PathMap, newCoordinates) ) {
-				//cout << "Agent on map extreme bounds" << endl;
-				continue;
-			}
-
-			AstarNode *newAstarNode = &PathMap.coord[newCoordinates.x][newCoordinates.y];
-			
-
-           	if ( detectCollision(newAstarNode) ) {
-				//cout << "Collision DETECTED\n";
-				continue;
-            	}
-			
-			
-			if ( findAstarNodeOnList(closedSet, newCoordinates) ) {
-				continue;
-			}
-			
-			if ( direction.size() == 8 ) {
-				if( i < 4 ) {
-					totalCost = current->G + 1;
-				}
-				else if ( i >= 4 ) 
-				{
-					totalCost = current->G + sqrt(2);
-				}
-			}
-			else if ( direction.size() == 4 ) {
-				totalCost = current->G + 1;
-			}
-
-			successor = findAstarNodeOnList(openSet, newCoordinates);
-		    	if (successor == nullptr ) {
-				successor = new AstarNode(newCoordinates, current);		
-				successor->G = totalCost;
-				successor->H = ComputeHeuristic(successor->pix, target_);
-				openSet.push_back(successor);		
-		    	}
-		    	else if (totalCost < successor->G) {
-				successor->parent = current;
-				successor->G = totalCost;
-				successor->H = ComputeHeuristic(successor->pix, target_);
-            		}
-			
-		}	
-		
-		
-		
-	}
-
-	while (current != nullptr) {
-        	Path.push_back(current->pix);
-        	current = current->parent;
-    	}
-
-	reverse(Path.begin(), Path.end());
-	string test_new = "test_new_func";
-	PrintPath(Path, scenario, test_new);
-
-	delete SourceAstarNode;
-
-	releaseAstarNodes(openSet);
-	releaseAstarNodes(closedSet);
-
-	PathCost = CalculateCost(Path);
-
-	#ifdef DEBUG_LEV_1
 	
-	cout << "Comparison:    " <<    "Agent A star cost: " << totalCost 
-	     << "		Calculation method cost: " << PathCost << endl;
-	
-	#endif
-
-	if (totalCost < MAX_LENGTH && PathCost < MAX_LENGTH) {		
-		return 1;
-	}
-	else {			
-		return 0;
-	}
-	
-};
-
-
-int Astar::search_extra_path(float& PathCost, CoordinateList& Path, pixel& source_, pixel& target_, int& AstarNodes_exp) {
-
-	scenario_param extra;
-	BuildPar(extra, source_, target_);
-	int index = scenario.getSize();
-	scenario.scenario_vect.push_back(extra);
-	double elapsed_time;	
-
-	if ( search_path(PathCost, Path, index, elapsed_time, AstarNodes_exp) == 1 )
-		return 1;
-	else
-		return 0;
-
-};
-
-
-
-bool OutOfBounds(Map& map, pixel& next) {
-
-	if ( next.x < 0 || next.x > map.width || 
-	     next.y < 0 || next.y > map.height ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-
-};
-
-bool detectCollision(AstarNode& newAstarNode) {
-	
-	if ( newAstarNode.sym != '.' ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-
-};
-
-bool detectCollision(AstarNode* newAstarNode) {
-	
-	if ( newAstarNode->sym != '.' ) {
-		return true;
-	}
-	else {
-		return false;
-	}
-
-};
-
-
-void Astar::releaseAstarNodes(AstarNodeSet& AstarNodes)
-{
-
-    
-    for(int i=0; i<AstarNodes.size(); i++) {
-        AstarNodes.pop_back();
-    }
-    
-   
-};
-
-AstarNode* Astar::findAstarNodeOnList(AstarNodeSet& AstarNodes, pixel& coordinates)
-{
-    for (int i =0; i<AstarNodes.size(); i++) {
-        if (AstarNodes[i]->pix == coordinates) {
-            return AstarNodes[i];
-        }
-    }
-    return nullptr;
-};
-
-
-pixel getDelta(pixel source, pixel target)
-{
-    pixel delta( abs(source.x - target.x),  abs(source.y - target.y) );
-    return delta;
-};
-
-float euclidean(pixel source, pixel target)
-{
-    pixel delta = std::move(getDelta(source, target));
-    return static_cast<float>( 25 * sqrt(pow(delta.x, 2) + pow(delta.y, 2)) );
-};
-
-float Astar::ComputeHeuristic(pixel source, pixel target)
-{
-    if( HeuristicMethod == "euclidean"  )  {
-    	return euclidean(source, target);
-    }
-    else {
-	cout << "Heuristic Method selected is not available\n";
-        return 0;
-    }
-
-};
-
-
-int find_AstarNode_coord(int map_x, int map_y, CoordinateList& Path) 
-{
-
-int i;
-for(i = 0; i<Path.size(); i++) {
-	if ( Path[i].x == map_x && Path[i].y == map_y ){
-		break;
-	}
-}
-
-return i;
-
-
-};
-
-
 void PrintPath(CoordinateList& PathFound, Scenario& scenario, string& filename) {
 
 
@@ -628,92 +546,6 @@ void PrintPath(CoordinateList& PathFound, Map& map, string& filename, char symbo
 
 
 };
-
-float CalculateCost(CoordinateList& Path, string& direction_mode) {
-
-	int i, j, dir, size;
-	float cost = 0;
-	pixel temp;
-
-	if( direction_mode == "diagonal" ) {
-		size = 8;
-	}
-	else if ( direction_mode == "cardinal" ) {
-		size = 4;
-	}
-
-	vector<pixel> direction;
-	setDirections(direction, direction_mode);
-
-	for(i=0; i<Path.size()-1; i++) {
-		//temp = pixel(Path[i+1].x - Path[i].x, Path[i+1].y - Path[i].y);
-		temp = Path[i+1] - Path[i];
-		for( j=0; j<size; j++) {
-		       if(temp == direction[j]) {
-			   dir = j;
-			   break;
-			}
-		}
-		if ( dir < 4 ) {
-			cost += 1;
-		}
-		else if( dir >= 4 ) {
-			cost += sqrt(2);
-		}
-
-	}
-
-	return cost;
-
-};
-
-float Astar::CalculateCost(CoordinateList& Path) {
-
-	int i, j, dir;
-	float cost = 0;
-	pixel temp;
-	
-	for(i=0; i<Path.size()-1; i++) {
-		//temp = pixel(Path[i+1].x - Path[i].x, Path[i+1].y - Path[i].y);
-		temp = Path[i+1] - Path[i];
-		for( j=0; j < direction.size(); j++) {
-		       if(temp == direction[j]) {
-			   dir = j;
-			   break;
-			}
-		}
-		if ( dir < 4 ) {
-			cost += 1;
-		}
-		else if( dir >= 4 ) {
-			cost += sqrt(2);
-		}
-			
-	}
-
-	return cost;
-
-};
-
-int Astar::getDirectionSize() {
-
-	return direction.size();
-
-};
-
-bool findpixel(int x, int y, LocalMap& occ) {
-
-	for(int i = 0; i < occ.size(); i++) {
-		if( occ[i].pix.x == x && occ[i].pix.y == y ) {
-			return true;
-		}
-	
-	}	
-
-	return false;
-
-};
-
 
 	
 }; // namespace GlobalPlanning
