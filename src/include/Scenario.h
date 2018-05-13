@@ -26,7 +26,7 @@ struct scenario_param {
 	pixel goal;
 	float optimal;
 
-	std::ostream& operator <<(std::ostream, const scenario_param param);
+	friend std::ostream& operator <<(std::ostream, const scenario_param param);
 };
 
 

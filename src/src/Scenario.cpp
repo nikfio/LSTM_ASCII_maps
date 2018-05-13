@@ -37,7 +37,7 @@ namespace GlobalPlanning {
 
 	}
 	
-	scenario_param::std::ostream& operator <<(std::ostream outs, const scenario_param param) {
+	std::ostream& operator <<(std::ostream outs, const scenario_param param) {
 		
 		outs << "Start: " << param.start 
              <<	" Goal: " << param.goal
